@@ -1,0 +1,282 @@
+<!DOCTYPE html>
+<html lang="zh" dir="ltr">
+<head>
+	<meta name="generator" content="Hugo 0.97.3" />
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="SpringLib 帮助文档  #  安装 #  下载后从 MATLAB 进入本库的根目录，在命令行运行以下命令即可:
+setupLibrary 安装完成后会自动打开 startup.m 文件 (如果没有会自动创建)。取消 %InitPlot 的注释可以使用本仓库提供的默认绘图设置（推荐）。
+卸载 #  从 MATLAB 进入本库的根目录，运行以下命令即可:
+setupLibrary uninstall ">
+<meta name="theme-color" content="#FFFFFF">
+<meta name="color-scheme" content="light dark"><meta property="og:title" content="" />
+<meta property="og:description" content="" />
+<meta property="og:type" content="website" />
+<meta property="og:url" content="https://iChunyu.github.io/helps/" />
+
+<title> | SpringLib</title>
+<link rel="manifest" href="/helps/manifest.json">
+<link rel="icon" href="/helps/favicon.png" type="image/x-icon">
+  <link rel="alternate" hreflang="en" href="https://iChunyu.github.io/helps/en/" title="SpringLib">
+<link rel="stylesheet" href="/helps/book.min.97cfda4f5e3c9fa49a2bf8d401f4ddc0eec576c99cdcf6afbec19173200c37db.css" integrity="sha256-l8/aT148n6SaK/jUAfTdwO7Fdsmc3PavvsGRcyAMN9s=" crossorigin="anonymous">
+  <script defer src="/helps/flexsearch.min.js"></script>
+  <script defer src="/helps/zh.search.min.4e778239b7b21d78d6af9cc764f619083d6c35bdb0a97145ebf7049beef1eb59.js" integrity="sha256-TneCObeyHXjWr5zHZPYZCD1sNb2wqXFF6/cEm&#43;7x61k=" crossorigin="anonymous"></script>
+
+  <script defer src="/helps/sw.min.f64fb8d201d1f8630596aa9dd14f82281dc1546c8ccca61a6bd182e5854cc09c.js" integrity="sha256-9k&#43;40gHR&#43;GMFlqqd0U&#43;CKB3BVGyMzKYaa9GC5YVMwJw=" crossorigin="anonymous"></script>
+<link rel="alternate" type="application/rss+xml" href="https://iChunyu.github.io/helps/index.xml" title="SpringLib" />
+<!--
+Made with Book Theme
+https://github.com/alex-shpak/hugo-book
+-->
+  
+</head>
+<body dir="ltr">
+  <input type="checkbox" class="hidden toggle" id="menu-control" />
+  <input type="checkbox" class="hidden toggle" id="toc-control" />
+  <main class="container flex">
+    <aside class="book-menu">
+      <div class="book-menu-content">
+        
+  <nav>
+<h2 class="book-brand">
+  <a class="flex align-center" href="/helps/"><span>SpringLib</span>
+  </a>
+</h2>
+
+
+<div class="book-search">
+  <input type="text" id="book-search-input" placeholder="搜索" aria-label="搜索" maxlength="64" data-hotkeys="s/" />
+  <div class="book-search-spinner hidden"></div>
+  <ul id="book-search-results"></ul>
+</div>
+
+
+
+  
+
+
+
+  
+    
+  
+
+
+  
+
+
+<ul class="book-languages">
+  <li>
+    <input type="checkbox" id="languages" class="toggle" />
+    <label for="languages" class="flex justify-between">
+      <a role="button" class="flex align-center">
+        <img src="/helps/svg/translate.svg" class="book-icon" alt="Languages" />
+        简体中文
+      </a>
+    </label>
+
+    <ul>
+      
+      <li>
+        <a href="https://iChunyu.github.io/helps/en/">
+          English
+        </a>
+      </li>
+      
+    </ul>
+  </li>
+</ul>
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+  
+  <ul>
+    
+  </ul>
+
+
+
+
+
+
+
+
+
+
+
+  
+<ul>
+  
+  <li>
+    <a href="https://iChunyu.github.io" target="_blank" rel="noopener">
+        某春雨的后花园
+      </a>
+  </li>
+  
+  <li>
+    <a href="https://github.com/iChunyu" target="_blank" rel="noopener">
+        GitHub
+      </a>
+  </li>
+  
+</ul>
+
+
+
+
+
+
+</nav>
+
+
+
+
+  <script>(function(){var e=document.querySelector("aside .book-menu-content");addEventListener("beforeunload",function(){localStorage.setItem("menu.scrollTop",e.scrollTop)}),e.scrollTop=localStorage.getItem("menu.scrollTop")})()</script>
+
+
+ 
+      </div>
+    </aside>
+
+    <div class="book-page">
+      <header class="book-header">
+        
+  <div class="flex align-center justify-between">
+  <label for="menu-control">
+    <img src="/helps/svg/menu.svg" class="book-icon" alt="Menu" />
+  </label>
+
+  <strong></strong>
+
+  <label for="toc-control">
+    
+    <img src="/helps/svg/toc.svg" class="book-icon" alt="Table of Contents" />
+    
+  </label>
+</div>
+
+
+  
+  <aside class="hidden clearfix">
+    
+  
+<nav id="TableOfContents">
+  <ul>
+    <li><a href="#font-colordd8452-springlib-帮助文档-font"><font color="#DD8452"> SpringLib 帮助文档 </font></a>
+      <ul>
+        <li><a href="#安装">安装</a></li>
+        <li><a href="#卸载">卸载</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+
+
+
+  </aside>
+  
+ 
+      </header>
+
+      
+      
+  <article class="markdown"><h1 id="font-colordd8452-springlib-帮助文档-font">
+  <font color="#DD8452"> SpringLib 帮助文档 </font>
+  <a class="anchor" href="#font-colordd8452-springlib-%e5%b8%ae%e5%8a%a9%e6%96%87%e6%a1%a3-font">#</a>
+</h1>
+<h2 id="安装">
+  安装
+  <a class="anchor" href="#%e5%ae%89%e8%a3%85">#</a>
+</h2>
+<p>下载后从 MATLAB 进入本库的根目录，在命令行运行以下命令即可:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-MATLAB" data-lang="MATLAB"><span style="display:flex;"><span>setupLibrary
+</span></span></code></pre></div><p>安装完成后会自动打开 <code>startup.m</code> 文件 (如果没有会自动创建)。取消 <code>%InitPlot</code> 的注释可以使用本仓库提供的默认绘图设置（推荐）。</p>
+<h2 id="卸载">
+  卸载
+  <a class="anchor" href="#%e5%8d%b8%e8%bd%bd">#</a>
+</h2>
+<p>从 MATLAB 进入本库的根目录，运行以下命令即可:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-MATLAB" data-lang="MATLAB"><span style="display:flex;"><span>setupLibrary uninstall
+</span></span></code></pre></div></article>
+ 
+      
+
+      <footer class="book-footer">
+        
+  <div class="flex flex-wrap justify-between">
+
+
+
+
+
+</div>
+
+
+
+  <script>(function(){function e(n){const e=window.getSelection(),t=document.createRange();t.selectNodeContents(n),e.removeAllRanges(),e.addRange(t)}document.querySelectorAll("pre code").forEach(t=>{t.addEventListener("click",function(){e(t.parentElement),navigator.clipboard&&navigator.clipboard.writeText(t.parentElement.textContent)})})})()</script>
+
+
+ 
+        
+      </footer>
+
+      
+  
+  <div class="book-comments">
+
+</div>
+  
+ 
+
+      <label for="menu-control" class="hidden book-menu-overlay"></label>
+    </div>
+
+    
+    <aside class="book-toc">
+      <div class="book-toc-content">
+        
+  
+<nav id="TableOfContents">
+  <ul>
+    <li><a href="#font-colordd8452-springlib-帮助文档-font"><font color="#DD8452"> SpringLib 帮助文档 </font></a>
+      <ul>
+        <li><a href="#安装">安装</a></li>
+        <li><a href="#卸载">卸载</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+
+
+ 
+      </div>
+    </aside>
+    
+  </main>
+
+  
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
