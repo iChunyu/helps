@@ -3,7 +3,7 @@ title = 'SpringLib'
 theme = 'hugo-book'
 
 # Book configuration
-disablePathToLower = true
+disablePathToLower = false
 enableGitInfo = false
 
 defaultContentLanguage = "zh"
@@ -30,17 +30,16 @@ hasCJKLanguage = true
     languageName = 'English'
     weight = 20
 
-[menu]
-  # [[menu.before]]
-  [[menu.after]]
-    name = "某春雨的后花园"
-    url = "https://iChunyu.github.io"
-    weight = 10
-
-  [[menu.after]]
-    name = "GitHub"
-    url = "https://github.com/iChunyu"
-    weight = 20
+# [menu]
+#   # [[menu.before]]
+#   [[menu.after]]
+#     name = "某春雨的后花园"
+#     url = "https://iChunyu.github.io"
+#     weight = 10
+#   [[menu.after]]
+#     name = "GitHub"
+#     url = "https://github.com/iChunyu"
+#     weight = 20
 
 
 
