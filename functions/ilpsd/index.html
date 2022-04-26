@@ -1,0 +1,471 @@
+<!DOCTYPE html>
+<html lang="zh" dir="ltr">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="iLPSD # 使用 LPSD 算法进行功率谱估计。 说明 # iLPSD(data,fs) 根据给定数据和采样率直接绘制功率谱密度。 h = iLPSD(data,fs) 当只有一个输出时，绘图并输出曲线句柄。 [pxx,f] = iLPSD(data,fs) 当有两个输出">
+<meta name="theme-color" content="#FFFFFF">
+<meta name="color-scheme" content="light dark"><meta property="og:title" content="iLPSD" />
+<meta property="og:description" content="iLPSD # 使用 LPSD 算法进行功率谱估计。 说明 # iLPSD(data,fs) 根据给定数据和采样率直接绘制功率谱密度。 h = iLPSD(data,fs) 当只有一个输出时，绘图并输出曲线句柄。 [pxx,f] = iLPSD(data,fs) 当有两个输出" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://iChunyu.github.io/helps/functions/ilpsd/" /><meta property="article:section" content="Functions" />
+
+
+
+<title>iLPSD | SpringLib</title>
+<link rel="manifest" href="/helps/manifest.json">
+<link rel="icon" href="/helps/favicon.png" type="image/x-icon">
+<link rel="stylesheet" href="/helps/book.min.97cfda4f5e3c9fa49a2bf8d401f4ddc0eec576c99cdcf6afbec19173200c37db.css" integrity="sha256-l8/aT148n6SaK/jUAfTdwO7Fdsmc3PavvsGRcyAMN9s=" crossorigin="anonymous">
+  <script defer src="/helps/flexsearch.min.js"></script>
+  <script defer src="/helps/zh.search.min.8913565dcf818dbd100a0d89f346fbee32bd7cb42d8640cb531d9e12213def22.js" integrity="sha256-iRNWXc&#43;Bjb0QCg2J80b77jK9fLQthkDLUx2eEiE97yI=" crossorigin="anonymous"></script>
+
+  <script defer src="/helps/sw.min.f64fb8d201d1f8630596aa9dd14f82281dc1546c8ccca61a6bd182e5854cc09c.js" integrity="sha256-9k&#43;40gHR&#43;GMFlqqd0U&#43;CKB3BVGyMzKYaa9GC5YVMwJw=" crossorigin="anonymous"></script>
+<!--
+Made with Book Theme
+https://github.com/alex-shpak/hugo-book
+-->
+  
+</head>
+<body dir="ltr">
+  <input type="checkbox" class="hidden toggle" id="menu-control" />
+  <input type="checkbox" class="hidden toggle" id="toc-control" />
+  <main class="container flex">
+    <aside class="book-menu">
+      <div class="book-menu-content">
+        
+  <nav>
+<h2 class="book-brand">
+  <a class="flex align-center" href="/helps/"><span>SpringLib</span>
+  </a>
+</h2>
+
+
+<div class="book-search">
+  <input type="text" id="book-search-input" placeholder="搜索" aria-label="搜索" maxlength="64" data-hotkeys="s/" />
+  <div class="book-search-spinner hidden"></div>
+  <ul id="book-search-results"></ul>
+</div>
+
+
+
+  
+
+
+
+  
+    
+  
+
+
+
+<ul class="book-languages">
+  <li>
+    <input type="checkbox" id="languages" class="toggle" />
+    <label for="languages" class="flex justify-between">
+      <a role="button" class="flex align-center">
+        <img src="/helps/svg/translate.svg" class="book-icon" alt="Languages" />
+        简体中文
+      </a>
+    </label>
+
+    <ul>
+      
+      <li>
+        <a href="https://iChunyu.github.io/helps/en/">
+          English
+        </a>
+      </li>
+      
+    </ul>
+  </li>
+</ul>
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+  
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <span>好用的函数</span>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/helps/functions/ilpsd/" class=" active">iLPSD</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+  </ul>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</nav>
+
+
+
+
+  <script>(function(){var e=document.querySelector("aside .book-menu-content");addEventListener("beforeunload",function(){localStorage.setItem("menu.scrollTop",e.scrollTop)}),e.scrollTop=localStorage.getItem("menu.scrollTop")})()</script>
+
+
+ 
+      </div>
+    </aside>
+
+    <div class="book-page">
+      <header class="book-header">
+        
+  <div class="flex align-center justify-between">
+  <label for="menu-control">
+    <img src="/helps/svg/menu.svg" class="book-icon" alt="Menu" />
+  </label>
+
+  <strong>iLPSD</strong>
+
+  <label for="toc-control">
+    
+    <img src="/helps/svg/toc.svg" class="book-icon" alt="Table of Contents" />
+    
+  </label>
+</div>
+
+
+  
+  <aside class="hidden clearfix">
+    
+  
+<nav id="TableOfContents">
+  <ul>
+    <li><a href="#font-colordd8452-ilpsd-font"><font color="#DD8452"> iLPSD </font></a>
+      <ul>
+        <li><a href="#说明">说明</a></li>
+        <li><a href="#输入">输入</a>
+          <ul>
+            <li><a href="#data">data</a></li>
+            <li><a href="#fs">fs</a></li>
+          </ul>
+        </li>
+        <li><a href="#输出">输出</a>
+          <ul>
+            <li><a href="#h">h</a></li>
+            <li><a href="#pxxamp">pxx/amp</a></li>
+            <li><a href="#f">f</a></li>
+          </ul>
+        </li>
+        <li><a href="#参数">参数</a>
+          <ul>
+            <li><a href="#jdes">Jdes</a></li>
+            <li><a href="#kdes">Kdes</a></li>
+            <li><a href="#xi">xi</a></li>
+            <li><a href="#window">window</a></li>
+            <li><a href="#parallel">parallel</a></li>
+            <li><a href="#type">type</a></li>
+            <li><a href="#绘图控制">绘图控制</a></li>
+          </ul>
+        </li>
+        <li><a href="#使用示例">使用示例</a></li>
+        <li><a href="#参考资料">参考资料</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+
+
+
+  </aside>
+  
+ 
+      </header>
+
+      
+      
+  <article class="markdown"><h1 id="font-colordd8452-ilpsd-font">
+  <font color="#DD8452"> iLPSD </font>
+  <a class="anchor" href="#font-colordd8452-ilpsd-font">#</a>
+</h1>
+<p>使用 LPSD 算法进行功率谱估计。</p>
+<h2 id="说明">
+  说明
+  <a class="anchor" href="#%e8%af%b4%e6%98%8e">#</a>
+</h2>
+<hr>
+<ul>
+<li><code>iLPSD(data,fs)</code> 根据给定数据和采样率直接绘制功率谱密度。</li>
+<li><code>h = iLPSD(data,fs)</code> 当只有一个输出时，绘图并输出曲线句柄。</li>
+<li><code>[pxx,f] = iLPSD(data,fs)</code> 当有两个输出时，计算数据的功率谱密度，不进行绘图。</li>
+<li><code>iLPSD(data,fs,Name,Value)</code> 根据给定的键值对参数进行功率谱估计并绘图。</li>
+<li><code>[amp,f] = iLPSD(data,fs,'type','Amp')</code> 计算幅度谱。</li>
+</ul>
+<h2 id="输入">
+  输入
+  <a class="anchor" href="#%e8%be%93%e5%85%a5">#</a>
+</h2>
+<hr>
+<h3 id="data">
+  data
+  <a class="anchor" href="#data">#</a>
+</h3>
+<p>原始数据，为向量或矩阵。当 <code>data</code> 为矩阵时，按各列分别进行计算。</p>
+<h3 id="fs">
+  fs
+  <a class="anchor" href="#fs">#</a>
+</h3>
+<p>采样率，以 
+<link rel="stylesheet" href="/helps/katex/katex.min.css" />
+<script defer src="/helps/katex/katex.min.js"></script>
+<script defer src="/helps/katex/auto-render.min.js" onload="renderMathInElement(document.body);"></script><span>
+  \(\mathrm{Hz}\)
+</span>
+ 为单位，标量。</p>
+<h2 id="输出">
+  输出
+  <a class="anchor" href="#%e8%be%93%e5%87%ba">#</a>
+</h2>
+<hr>
+<h3 id="h">
+  h
+  <a class="anchor" href="#h">#</a>
+</h3>
+<p>当函数只有一个输出时，输出该变量，为绘制曲线句柄。</p>
+<h3 id="pxxamp">
+  pxx/amp
+  <a class="anchor" href="#pxxamp">#</a>
+</h3>
+<p>当函数有两个输出时，该变量作为第一个输出，取决于参数 <code>‘type’</code> 的设置：</p>
+<ul>
+<li>当 <code>’type‘</code> 设置为 <code>’PSD‘</code> （默认值）时，第一位置输出为功率谱密度，单位为 <span>
+  \(\mathrm{*^2/Hz}\)
+</span>
+；</li>
+<li>当 <code>’type‘</code> 设置为 <code>’RMS‘</code> 时，第一位置输出为有效值，单位为 <span>
+  \(\mathrm{*}\)
+</span>
+；</li>
+<li>当 <code>’type‘</code> 设置为 <code>’Amp‘</code> 时，第一位置输出为幅值，单位为 <span>
+  \(\mathrm{*}\)
+</span>
+。</li>
+</ul>
+<h3 id="f">
+  f
+  <a class="anchor" href="#f">#</a>
+</h3>
+<p>当函数有两个输出时，该变量为第二个输出，对应于第一个变量各点的频率，单位为 <span>
+  \(\mathrm{Hz}\)
+</span>
+。</p>
+<h2 id="参数">
+  参数
+  <a class="anchor" href="#%e5%8f%82%e6%95%b0">#</a>
+</h2>
+<hr>
+<p>本函数支持使用 <code>'Name',Value</code> 的形式进行额外设置，可用键值对参数如下。</p>
+<h3 id="jdes">
+  Jdes
+  <a class="anchor" href="#jdes">#</a>
+</h3>
+<p>期望的频率点数，为整数，默认值为 <code>1000</code>。</p>
+<h3 id="kdes">
+  Kdes
+  <a class="anchor" href="#kdes">#</a>
+</h3>
+<p>期望的分段次数，为整数，默认值为 <code>100</code>。</p>
+<h3 id="xi">
+  xi
+  <a class="anchor" href="#xi">#</a>
+</h3>
+<p>数据分段时的重叠率，为 0~1 之间的小数，默认值为 <code>0.5</code>。</p>
+<h3 id="window">
+  window
+  <a class="anchor" href="#window">#</a>
+</h3>
+<p>窗函数，为函数句柄，默认值为 <code>@hann</code>。支持自定义窗函数，但应当确保所定义的窗函数仅接受一个参数，即窗函数的长度（为整数）。</p>
+<h3 id="parallel">
+  parallel
+  <a class="anchor" href="#parallel">#</a>
+</h3>
+<p>是否使用并行计算，为逻辑变量，默认为 <code>false</code>。</p>
+<h3 id="type">
+  type
+  <a class="anchor" href="#type">#</a>
+</h3>
+<p>计算的谱类型，为字符变量，可选值有：</p>
+<ul>
+<li><code>’PSD'</code>: 默认值，计算功率谱密度；</li>
+<li><code>'RMS'</code>：计算有效值（标准差）；</li>
+<li><code>'Amp'</code>：计算幅度谱。</li>
+</ul>
+<h3 id="绘图控制">
+  绘图控制
+  <a class="anchor" href="#%e7%bb%98%e5%9b%be%e6%8e%a7%e5%88%b6">#</a>
+</h3>
+<p>本程序接受绘图控制的键值对，如 <code>'LineWidth',2</code>。更多绘图控制可以参考 
+  <a href="https://ww2.mathworks.cn/help/matlab/ref/plot.html?lang=en">Plot 帮助文档</a>。</p>
+<h2 id="使用示例">
+  使用示例
+  <a class="anchor" href="#%e4%bd%bf%e7%94%a8%e7%a4%ba%e4%be%8b">#</a>
+</h2>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-MATLAB" data-lang="MATLAB"><span style="display:flex;"><span>ASD = @(f) <span style="color:#ae81ff">0.07</span><span style="color:#f92672">./</span>f <span style="color:#f92672">+</span> <span style="color:#ae81ff">1</span>;
+</span></span><span style="display:flex;"><span>fs = <span style="color:#ae81ff">10</span>;
+</span></span><span style="display:flex;"><span>N = <span style="color:#ae81ff">1e4</span>;
+</span></span><span style="display:flex;"><span>x = genNoise(ASD,fs,N);
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>figure
+</span></span><span style="display:flex;"><span>iLPSD(x,fs)
+</span></span><span style="display:flex;"><span>hold on
+</span></span><span style="display:flex;"><span>grid on
+</span></span><span style="display:flex;"><span>iLPSD(x,fs,<span style="color:#e6db74">&#39;Jdes&#39;</span>,<span style="color:#ae81ff">3e3</span>)
+</span></span><span style="display:flex;"><span>iLPSD(x,fs,<span style="color:#e6db74">&#39;win&#39;</span>,@hamming,<span style="color:#e6db74">&#39;LineStyle&#39;</span>,<span style="color:#e6db74">&#39;--&#39;</span>)
+</span></span><span style="display:flex;"><span>xlabel(<span style="color:#e6db74">&#39;Frequency (Hz)&#39;</span>)
+</span></span><span style="display:flex;"><span>ylabel(<span style="color:#e6db74">&#39;PSD&#39;</span>)
+</span></span></code></pre></div><h2 id="参考资料">
+  参考资料
+  <a class="anchor" href="#%e5%8f%82%e8%80%83%e8%b5%84%e6%96%99">#</a>
+</h2>
+<ol>
+<li>Michael Tröbs, Gerhard Heinzel. 
+  <a href="https://www.sciencedirect.com/science/article/pii/S026322410500117X">Improved spectrum estimation from digitized time series on a logarithmic frequency axis. Measurement</a>. 2005.</li>
+<li>
+  <a href="https://ichunyu.github.io/lpsd/">LPSD 功率谱估计</a>. 某春雨的后花园.</li>
+</ol>
+</article>
+ 
+      
+
+      <footer class="book-footer">
+        
+  <div class="flex flex-wrap justify-between">
+
+
+
+
+
+</div>
+
+
+
+  <script>(function(){function e(n){const e=window.getSelection(),t=document.createRange();t.selectNodeContents(n),e.removeAllRanges(),e.addRange(t)}document.querySelectorAll("pre code").forEach(t=>{t.addEventListener("click",function(){e(t.parentElement),navigator.clipboard&&navigator.clipboard.writeText(t.parentElement.textContent)})})})()</script>
+
+
+ 
+        
+      </footer>
+
+      
+  
+  <div class="book-comments">
+
+</div>
+  
+ 
+
+      <label for="menu-control" class="hidden book-menu-overlay"></label>
+    </div>
+
+    
+    <aside class="book-toc">
+      <div class="book-toc-content">
+        
+  
+<nav id="TableOfContents">
+  <ul>
+    <li><a href="#font-colordd8452-ilpsd-font"><font color="#DD8452"> iLPSD </font></a>
+      <ul>
+        <li><a href="#说明">说明</a></li>
+        <li><a href="#输入">输入</a>
+          <ul>
+            <li><a href="#data">data</a></li>
+            <li><a href="#fs">fs</a></li>
+          </ul>
+        </li>
+        <li><a href="#输出">输出</a>
+          <ul>
+            <li><a href="#h">h</a></li>
+            <li><a href="#pxxamp">pxx/amp</a></li>
+            <li><a href="#f">f</a></li>
+          </ul>
+        </li>
+        <li><a href="#参数">参数</a>
+          <ul>
+            <li><a href="#jdes">Jdes</a></li>
+            <li><a href="#kdes">Kdes</a></li>
+            <li><a href="#xi">xi</a></li>
+            <li><a href="#window">window</a></li>
+            <li><a href="#parallel">parallel</a></li>
+            <li><a href="#type">type</a></li>
+            <li><a href="#绘图控制">绘图控制</a></li>
+          </ul>
+        </li>
+        <li><a href="#使用示例">使用示例</a></li>
+        <li><a href="#参考资料">参考资料</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+
+
+ 
+      </div>
+    </aside>
+    
+  </main>
+
+  
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+

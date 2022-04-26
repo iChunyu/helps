@@ -27,6 +27,8 @@
                 href="https://iChunyu.github.io/helps/categories/"
                 />
   </url><url>
+    <loc>https://iChunyu.github.io/helps/functions/ilpsd/</loc>
+  </url><url>
     <loc>https://iChunyu.github.io/helps/tags/</loc>
     <xhtml:link
                 rel="alternate"
@@ -37,6 +39,18 @@
                 rel="alternate"
                 hreflang="zh"
                 href="https://iChunyu.github.io/helps/tags/"
+                />
+  </url><url>
+    <loc>https://iChunyu.github.io/helps/functions/</loc>
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="https://iChunyu.github.io/helps/en/functions/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="zh"
+                href="https://iChunyu.github.io/helps/functions/"
                 />
   </url>
 </urlset>
