@@ -1,0 +1,470 @@
+<!DOCTYPE html>
+<html lang="zh" dir="ltr">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="findMinPSD # 搜索关心频段内的最优功率谱密度。这里的最优定义为在给定积分区间内谱密度（以 \(\mathrm{*^2/Hz}\) 为单位）的积分最小。 说明 # findMinPSD(data,fs) 使用默认设置搜索最优功率谱密度并">
+<meta name="theme-color" content="#FFFFFF">
+<meta name="color-scheme" content="light dark"><meta property="og:title" content="findMinPSD" />
+<meta property="og:description" content="findMinPSD # 搜索关心频段内的最优功率谱密度。这里的最优定义为在给定积分区间内谱密度（以 \(\mathrm{*^2/Hz}\) 为单位）的积分最小。 说明 # findMinPSD(data,fs) 使用默认设置搜索最优功率谱密度并" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://iChunyu.github.io/helps/functions/findminpsd/" /><meta property="article:section" content="Functions" />
+
+
+
+<title>findMinPSD | SpringLib</title>
+<link rel="manifest" href="/helps/manifest.json">
+<link rel="icon" href="/helps/favicon.png" type="image/x-icon">
+<link rel="stylesheet" href="/helps/book.min.97cfda4f5e3c9fa49a2bf8d401f4ddc0eec576c99cdcf6afbec19173200c37db.css" integrity="sha256-l8/aT148n6SaK/jUAfTdwO7Fdsmc3PavvsGRcyAMN9s=" crossorigin="anonymous">
+  <script defer src="/helps/flexsearch.min.js"></script>
+  <script defer src="/helps/zh.search.min.43b494083432cc436920d6c2a1b0a5839b188a2708b4fc4de092a8b9c10589ff.js" integrity="sha256-Q7SUCDQyzENpINbCobClg5sYiicItPxN4JKoucEFif8=" crossorigin="anonymous"></script>
+
+  <script defer src="/helps/sw.min.f64fb8d201d1f8630596aa9dd14f82281dc1546c8ccca61a6bd182e5854cc09c.js" integrity="sha256-9k&#43;40gHR&#43;GMFlqqd0U&#43;CKB3BVGyMzKYaa9GC5YVMwJw=" crossorigin="anonymous"></script>
+<!--
+Made with Book Theme
+https://github.com/alex-shpak/hugo-book
+-->
+  
+</head>
+<body dir="ltr">
+  <input type="checkbox" class="hidden toggle" id="menu-control" />
+  <input type="checkbox" class="hidden toggle" id="toc-control" />
+  <main class="container flex">
+    <aside class="book-menu">
+      <div class="book-menu-content">
+        
+  <nav>
+<h2 class="book-brand">
+  <a class="flex align-center" href="/helps/"><span>SpringLib</span>
+  </a>
+</h2>
+
+
+<div class="book-search">
+  <input type="text" id="book-search-input" placeholder="搜索" aria-label="搜索" maxlength="64" data-hotkeys="s/" />
+  <div class="book-search-spinner hidden"></div>
+  <ul id="book-search-results"></ul>
+</div>
+
+
+
+  
+
+
+
+  
+    
+  
+
+
+
+<ul class="book-languages">
+  <li>
+    <input type="checkbox" id="languages" class="toggle" />
+    <label for="languages" class="flex justify-between">
+      <a role="button" class="flex align-center">
+        <img src="/helps/svg/translate.svg" class="book-icon" alt="Languages" />
+        简体中文
+      </a>
+    </label>
+
+    <ul>
+      
+      <li>
+        <a href="https://iChunyu.github.io/helps/en/">
+          English
+        </a>
+      </li>
+      
+    </ul>
+  </li>
+</ul>
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+  
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <span>好用的函数</span>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/helps/functions/findminpsd/" class=" active">findMinPSD</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/helps/functions/ilpsd/" class="">iLPSD</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/helps/functions/initplot/" class="">InitPlot</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/helps/functions/spcolor/" class="">spcolor</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+  </ul>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</nav>
+
+
+
+
+  <script>(function(){var e=document.querySelector("aside .book-menu-content");addEventListener("beforeunload",function(){localStorage.setItem("menu.scrollTop",e.scrollTop)}),e.scrollTop=localStorage.getItem("menu.scrollTop")})()</script>
+
+
+ 
+      </div>
+    </aside>
+
+    <div class="book-page">
+      <header class="book-header">
+        
+  <div class="flex align-center justify-between">
+  <label for="menu-control">
+    <img src="/helps/svg/menu.svg" class="book-icon" alt="Menu" />
+  </label>
+
+  <strong>findMinPSD</strong>
+
+  <label for="toc-control">
+    
+    <img src="/helps/svg/toc.svg" class="book-icon" alt="Table of Contents" />
+    
+  </label>
+</div>
+
+
+  
+  <aside class="hidden clearfix">
+    
+  
+<nav id="TableOfContents">
+  <ul>
+    <li><a href="#font-colordd8452-findminpsd-font"><font color="#DD8452"> findMinPSD </font></a>
+      <ul>
+        <li><a href="#说明">说明</a></li>
+        <li><a href="#输入">输入</a>
+          <ul>
+            <li><a href="#data">data</a></li>
+            <li><a href="#fs">fs</a></li>
+          </ul>
+        </li>
+        <li><a href="#输出">输出</a>
+          <ul>
+            <li><a href="#idx">idx</a></li>
+            <li><a href="#pxx">pxx</a></li>
+            <li><a href="#f">f</a></li>
+          </ul>
+        </li>
+        <li><a href="#参数">参数</a>
+          <ul>
+            <li><a href="#fmin">fmin</a></li>
+            <li><a href="#fint">fint</a></li>
+            <li><a href="#xi">xi</a></li>
+            <li><a href="#method">method</a></li>
+            <li><a href="#jdes">Jdes</a></li>
+            <li><a href="#pfig">pfig</a></li>
+          </ul>
+        </li>
+        <li><a href="#依赖">依赖</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+
+
+
+  </aside>
+  
+ 
+      </header>
+
+      
+      
+  <article class="markdown"><h1 id="font-colordd8452-findminpsd-font">
+  <font color="#DD8452"> findMinPSD </font>
+  <a class="anchor" href="#font-colordd8452-findminpsd-font">#</a>
+</h1>
+<p>搜索关心频段内的最优功率谱密度。这里的最优定义为在给定积分区间内谱密度（以 
+<link rel="stylesheet" href="/helps/katex/katex.min.css" />
+<script defer src="/helps/katex/katex.min.js"></script>
+<script defer src="/helps/katex/auto-render.min.js" onload="renderMathInElement(document.body);"></script><span>
+  \(\mathrm{*^2/Hz}\)
+</span>
+ 为单位）的积分最小。</p>
+<h2 id="说明">
+  说明
+  <a class="anchor" href="#%e8%af%b4%e6%98%8e">#</a>
+</h2>
+<hr>
+<ul>
+<li><code>findMinPSD(data,fs)</code> 使用默认设置搜索最优功率谱密度并绘制时频曲面。</li>
+<li><code>idx = findMinPSD(data,fs,Name,Value)</code> 根据键值对参数设置搜索最优功率谱密度，并返回对应的时域数据索引。</li>
+<li><code>[pxx,f] = findMinPSD(data,fs,Name,Value)</code> 根据键值对参数设置搜索最优功率谱密度，并返回谱密度估计值。</li>
+<li><code>[idx,pxx,f] = findMinPSD(data,fs,Name,Value)</code> 根据键值对参数设置搜索最优功率谱密度，并返回索引和谱密度估计值。</li>
+</ul>
+<h2 id="输入">
+  输入
+  <a class="anchor" href="#%e8%be%93%e5%85%a5">#</a>
+</h2>
+<hr>
+<h3 id="data">
+  data
+  <a class="anchor" href="#data">#</a>
+</h3>
+<p>时域数据，为一维向量。</p>
+<h3 id="fs">
+  fs
+  <a class="anchor" href="#fs">#</a>
+</h3>
+<p>采样率，为标量，单位为 <span>
+  \(\mathrm{Hz}\)
+</span>
+。</p>
+<h2 id="输出">
+  输出
+  <a class="anchor" href="#%e8%be%93%e5%87%ba">#</a>
+</h2>
+<hr>
+<h3 id="idx">
+  idx
+  <a class="anchor" href="#idx">#</a>
+</h3>
+<p>最优谱密度的时域索引，包含开始位置和终止位置。当函数只有一个输出时输出该索引；或当函数有三个输出时，该索引为第一个输出。</p>
+<h3 id="pxx">
+  pxx
+  <a class="anchor" href="#pxx">#</a>
+</h3>
+<p>估计的最优功率谱密度，单位为 <span>
+  \(\mathrm{*^2/Hz}\)
+</span>
+。当函数有两个输出时，谱密度为第一个输出；或当函数具有三个输出时，谱密度为第二个输出。</p>
+<h3 id="f">
+  f
+  <a class="anchor" href="#f">#</a>
+</h3>
+<p>谱密度对应的频率点，单位为 <span>
+  \(\mathrm{Hz}\)
+</span>
+。当函数有多个输出时，该频率为最后一个输出。</p>
+<h2 id="参数">
+  参数
+  <a class="anchor" href="#%e5%8f%82%e6%95%b0">#</a>
+</h2>
+<hr>
+<h3 id="fmin">
+  fmin
+  <a class="anchor" href="#fmin">#</a>
+</h3>
+<p>计算功率谱密度时关心的最小频率，为标量，单位为 <span>
+  \(\mathrm{Hz}\)
+</span>
+。默认值为 <code>1e-3</code>。</p>
+<h3 id="fint">
+  fint
+  <a class="anchor" href="#fint">#</a>
+</h3>
+<p>计算最优功率谱的积分区间，包含两个数值，对应单位为 <span>
+  \(\mathrm{Hz}\)
+</span>
+。默认值为 <code>[1e-2 1e-1]</code>。</p>
+<h3 id="xi">
+  xi
+  <a class="anchor" href="#xi">#</a>
+</h3>
+<p>数据分段扫描时的重叠率，为 0～1 之间的小数，默认值为 <code>0.8</code>。</p>
+<h3 id="method">
+  method
+  <a class="anchor" href="#method">#</a>
+</h3>
+<p>计算功率谱的算法，可选值为 <code>'periodogram'</code> 和 <code>'LPSD'</code>（同 <code>'iLPSD'</code>），默认值为 <code>'periodogram'</code>。</p>
+<h3 id="jdes">
+  Jdes
+  <a class="anchor" href="#jdes">#</a>
+</h3>
+<p>当设置功率谱算法为 <code>'LPSD'</code> 时该选项有效，为 LPSD 算法的期望频率点数，为标量。默认值为 <code>500</code>。</p>
+<h3 id="pfig">
+  pfig
+  <a class="anchor" href="#pfig">#</a>
+</h3>
+<p>是否绘制扫描功率谱的时频曲面，为逻辑变量，默认值为 <code>true</code>。</p>
+<h2 id="依赖">
+  依赖
+  <a class="anchor" href="#%e4%be%9d%e8%b5%96">#</a>
+</h2>
+<p>当设置功率谱算法为 <code>'LPSD'</code> 时，该程序依赖于 
+  <a href="https://iChunyu.github.io/helps/functions/ilpsd/"><code>iLPSD</code></a></p>
+</article>
+ 
+      
+
+      <footer class="book-footer">
+        
+  <div class="flex flex-wrap justify-between">
+
+
+
+
+
+</div>
+
+
+
+  <script>(function(){function e(n){const e=window.getSelection(),t=document.createRange();t.selectNodeContents(n),e.removeAllRanges(),e.addRange(t)}document.querySelectorAll("pre code").forEach(t=>{t.addEventListener("click",function(){e(t.parentElement),navigator.clipboard&&navigator.clipboard.writeText(t.parentElement.textContent)})})})()</script>
+
+
+ 
+        
+      </footer>
+
+      
+  
+  <div class="book-comments">
+
+</div>
+  
+ 
+
+      <label for="menu-control" class="hidden book-menu-overlay"></label>
+    </div>
+
+    
+    <aside class="book-toc">
+      <div class="book-toc-content">
+        
+  
+<nav id="TableOfContents">
+  <ul>
+    <li><a href="#font-colordd8452-findminpsd-font"><font color="#DD8452"> findMinPSD </font></a>
+      <ul>
+        <li><a href="#说明">说明</a></li>
+        <li><a href="#输入">输入</a>
+          <ul>
+            <li><a href="#data">data</a></li>
+            <li><a href="#fs">fs</a></li>
+          </ul>
+        </li>
+        <li><a href="#输出">输出</a>
+          <ul>
+            <li><a href="#idx">idx</a></li>
+            <li><a href="#pxx">pxx</a></li>
+            <li><a href="#f">f</a></li>
+          </ul>
+        </li>
+        <li><a href="#参数">参数</a>
+          <ul>
+            <li><a href="#fmin">fmin</a></li>
+            <li><a href="#fint">fint</a></li>
+            <li><a href="#xi">xi</a></li>
+            <li><a href="#method">method</a></li>
+            <li><a href="#jdes">Jdes</a></li>
+            <li><a href="#pfig">pfig</a></li>
+          </ul>
+        </li>
+        <li><a href="#依赖">依赖</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+
+
+ 
+      </div>
+    </aside>
+    
+  </main>
+
+  
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
