@@ -14,5 +14,23 @@
       <description>iLPSD # 使用 LPSD 算法进行功率谱估计。 说明 # iLPSD(data,fs) 根据给定数据和采样率直接绘制功率谱密度。 h = iLPSD(data,fs) 当只有一个输出时，绘图并输出曲线句柄。 [pxx,f] = iLPSD(data,fs) 当有两个输出</description>
     </item>
     
+    <item>
+      <title>InitPlot</title>
+      <link>https://iChunyu.github.io/helps/functions/initplot/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://iChunyu.github.io/helps/functions/initplot/</guid>
+      <description>InitPlot # 初始化绘图设置。 说明 # InitPlot 使用默认值值初始化绘图设置。 InitPlot(LineWidth,FontSize,WindowStyle,Interperter) 根据指定值初始化绘图设置。 InitPlot(&#39;remove&#39;) 移除自定义设置，恢复 MATLAB 默认值。 输入 # LindWidth # 绘图采用的线宽</description>
+    </item>
+    
+    <item>
+      <title>spcolor</title>
+      <link>https://iChunyu.github.io/helps/functions/spcolor/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://iChunyu.github.io/helps/functions/spcolor/</guid>
+      <description>spcolor # 设置绘图颜色。 说明 # spcolor 输出当前配色方案的颜色名字及其归一化 RGB 值。 cVec = spcolor(num) 根据数字索引输出对应颜色的 RGB 值。 cVec = spcolor(str) 根据名称索引输出对应颜色的 RGB</description>
+    </item>
+    
   </channel>
 </rss>

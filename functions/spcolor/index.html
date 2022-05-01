@@ -1,0 +1,368 @@
+<!DOCTYPE html>
+<html lang="zh" dir="ltr">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="spcolor # 设置绘图颜色。 说明 # spcolor 输出当前配色方案的颜色名字及其归一化 RGB 值。 cVec = spcolor(num) 根据数字索引输出对应颜色的 RGB 值。 cVec = spcolor(str) 根据名称索引输出对应颜色的 RGB">
+<meta name="theme-color" content="#FFFFFF">
+<meta name="color-scheme" content="light dark"><meta property="og:title" content="spcolor" />
+<meta property="og:description" content="spcolor # 设置绘图颜色。 说明 # spcolor 输出当前配色方案的颜色名字及其归一化 RGB 值。 cVec = spcolor(num) 根据数字索引输出对应颜色的 RGB 值。 cVec = spcolor(str) 根据名称索引输出对应颜色的 RGB" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://iChunyu.github.io/helps/functions/spcolor/" /><meta property="article:section" content="Functions" />
+
+
+
+<title>spcolor | SpringLib</title>
+<link rel="manifest" href="/helps/manifest.json">
+<link rel="icon" href="/helps/favicon.png" type="image/x-icon">
+<link rel="stylesheet" href="/helps/book.min.97cfda4f5e3c9fa49a2bf8d401f4ddc0eec576c99cdcf6afbec19173200c37db.css" integrity="sha256-l8/aT148n6SaK/jUAfTdwO7Fdsmc3PavvsGRcyAMN9s=" crossorigin="anonymous">
+  <script defer src="/helps/flexsearch.min.js"></script>
+  <script defer src="/helps/zh.search.min.308e2aefc43a243f6eff4c6fe17dca271691ef13e65f5168192e8aa06741d621.js" integrity="sha256-MI4q78Q6JD9u/0xv4X3KJxaR7xPmX1FoGS6KoGdB1iE=" crossorigin="anonymous"></script>
+
+  <script defer src="/helps/sw.min.f64fb8d201d1f8630596aa9dd14f82281dc1546c8ccca61a6bd182e5854cc09c.js" integrity="sha256-9k&#43;40gHR&#43;GMFlqqd0U&#43;CKB3BVGyMzKYaa9GC5YVMwJw=" crossorigin="anonymous"></script>
+<!--
+Made with Book Theme
+https://github.com/alex-shpak/hugo-book
+-->
+  
+</head>
+<body dir="ltr">
+  <input type="checkbox" class="hidden toggle" id="menu-control" />
+  <input type="checkbox" class="hidden toggle" id="toc-control" />
+  <main class="container flex">
+    <aside class="book-menu">
+      <div class="book-menu-content">
+        
+  <nav>
+<h2 class="book-brand">
+  <a class="flex align-center" href="/helps/"><span>SpringLib</span>
+  </a>
+</h2>
+
+
+<div class="book-search">
+  <input type="text" id="book-search-input" placeholder="搜索" aria-label="搜索" maxlength="64" data-hotkeys="s/" />
+  <div class="book-search-spinner hidden"></div>
+  <ul id="book-search-results"></ul>
+</div>
+
+
+
+  
+
+
+
+  
+    
+  
+
+
+
+<ul class="book-languages">
+  <li>
+    <input type="checkbox" id="languages" class="toggle" />
+    <label for="languages" class="flex justify-between">
+      <a role="button" class="flex align-center">
+        <img src="/helps/svg/translate.svg" class="book-icon" alt="Languages" />
+        简体中文
+      </a>
+    </label>
+
+    <ul>
+      
+      <li>
+        <a href="https://iChunyu.github.io/helps/en/">
+          English
+        </a>
+      </li>
+      
+    </ul>
+  </li>
+</ul>
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+  
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <span>好用的函数</span>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/helps/functions/ilpsd/" class="">iLPSD</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/helps/functions/initplot/" class="">InitPlot</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/helps/functions/spcolor/" class=" active">spcolor</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+  </ul>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</nav>
+
+
+
+
+  <script>(function(){var e=document.querySelector("aside .book-menu-content");addEventListener("beforeunload",function(){localStorage.setItem("menu.scrollTop",e.scrollTop)}),e.scrollTop=localStorage.getItem("menu.scrollTop")})()</script>
+
+
+ 
+      </div>
+    </aside>
+
+    <div class="book-page">
+      <header class="book-header">
+        
+  <div class="flex align-center justify-between">
+  <label for="menu-control">
+    <img src="/helps/svg/menu.svg" class="book-icon" alt="Menu" />
+  </label>
+
+  <strong>spcolor</strong>
+
+  <label for="toc-control">
+    
+    <img src="/helps/svg/toc.svg" class="book-icon" alt="Table of Contents" />
+    
+  </label>
+</div>
+
+
+  
+  <aside class="hidden clearfix">
+    
+  
+<nav id="TableOfContents">
+  <ul>
+    <li><a href="#font-colordd8452-spcolor-font"><font color="#DD8452"> spcolor </font></a>
+      <ul>
+        <li><a href="#说明">说明</a></li>
+        <li><a href="#输入">输入</a>
+          <ul>
+            <li><a href="#num">num</a></li>
+            <li><a href="#str">str</a></li>
+            <li><a href="#hfig">hfig</a></li>
+          </ul>
+        </li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+
+
+
+  </aside>
+  
+ 
+      </header>
+
+      
+      
+  <article class="markdown"><h1 id="font-colordd8452-spcolor-font">
+  <font color="#DD8452"> spcolor </font>
+  <a class="anchor" href="#font-colordd8452-spcolor-font">#</a>
+</h1>
+<p>设置绘图颜色。</p>
+<h2 id="说明">
+  说明
+  <a class="anchor" href="#%e8%af%b4%e6%98%8e">#</a>
+</h2>
+<hr>
+<ul>
+<li><code>spcolor</code> 输出当前配色方案的颜色名字及其归一化 RGB 值。</li>
+<li><code>cVec = spcolor(num)</code> 根据数字索引输出对应颜色的 RGB 值。</li>
+<li><code>cVec = spcolor(str)</code> 根据名称索引输出对应颜色的 RGB 值。</li>
+<li><code>spcolor('ShowColors')</code> 绘图展示当前配色方案。</li>
+<li><code>spcolor(hfig)</code> 将配色方案应用到指定的绘图中。</li>
+</ul>
+<h2 id="输入">
+  输入
+  <a class="anchor" href="#%e8%be%93%e5%85%a5">#</a>
+</h2>
+<hr>
+<p>本程序仅支持单一输入，且在不同的输入条件下会有不同的效果，以便用于不同的场景。</p>
+<p>当不给定输入时，程序仅在命令行输出当前的配色方案列表，包括颜色的名称及其归一化 RGB 值。</p>
+<h3 id="num">
+  num
+  <a class="anchor" href="#num">#</a>
+</h3>
+<p>数字索引，为整数或整数向量。在这种输入下，函数将输出对应索引下的颜色值。特别地，当输入为 <code>-1</code> 时，将输出当前配色方案下的所有颜色 RGB 值。</p>
+<h3 id="str">
+  str
+  <a class="anchor" href="#str">#</a>
+</h3>
+<p>名称索引，为字符串或字符串数组。在这种输入下，函数将输出指定名称的颜色值。特别地，当输入字符串为 <code>’ShowColors‘</code> （不区分大小写，或简化为 <code>’show‘</code>）时，程序将绘图并展示当前的配色方案。</p>
+<h3 id="hfig">
+  hfig
+  <a class="anchor" href="#hfig">#</a>
+</h3>
+<p><code>figure</code> 或 <code>axes</code> 句柄，在这种输入下，可以将配色方案应用在当前图窗或坐标轴下的所有曲线。示例如下</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-matlab" data-lang="matlab"><span style="display:flex;"><span>N = <span style="color:#ae81ff">5</span>;
+</span></span><span style="display:flex;"><span>x = linspace(<span style="color:#ae81ff">0</span>,<span style="color:#ae81ff">2</span><span style="color:#f92672">*</span>pi,<span style="color:#ae81ff">200</span>)<span style="color:#f92672">&#39;</span>;
+</span></span><span style="display:flex;"><span>y = sin(x<span style="color:#f92672">+</span>(<span style="color:#ae81ff">0</span>:N<span style="color:#f92672">-</span><span style="color:#ae81ff">1</span>)<span style="color:#f92672">/</span>(N<span style="color:#f92672">-</span><span style="color:#ae81ff">1</span>)<span style="color:#f92672">*</span>pi);
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">% 仅把配色方案应用到指定坐标轴内的曲线</span>
+</span></span><span style="display:flex;"><span>figure
+</span></span><span style="display:flex;"><span>ax1 = subplot(<span style="color:#ae81ff">2</span>,<span style="color:#ae81ff">1</span>,<span style="color:#ae81ff">1</span>);
+</span></span><span style="display:flex;"><span>plot(x,y,<span style="color:#e6db74">&#39;k&#39;</span>)
+</span></span><span style="display:flex;"><span>ax2 = subplot(<span style="color:#ae81ff">2</span>,<span style="color:#ae81ff">1</span>,<span style="color:#ae81ff">2</span>);
+</span></span><span style="display:flex;"><span>plot(x,y,<span style="color:#e6db74">&#39;k&#39;</span>)
+</span></span><span style="display:flex;"><span>spcolor(ax1)
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">% 把配色方案应用到图窗内所有曲线</span>
+</span></span><span style="display:flex;"><span>figure
+</span></span><span style="display:flex;"><span>ax1 = subplot(<span style="color:#ae81ff">2</span>,<span style="color:#ae81ff">1</span>,<span style="color:#ae81ff">1</span>);
+</span></span><span style="display:flex;"><span>plot(x,y,<span style="color:#e6db74">&#39;k&#39;</span>)
+</span></span><span style="display:flex;"><span>ax2 = subplot(<span style="color:#ae81ff">2</span>,<span style="color:#ae81ff">1</span>,<span style="color:#ae81ff">2</span>);
+</span></span><span style="display:flex;"><span>plot(x,y,<span style="color:#e6db74">&#39;k&#39;</span>)
+</span></span><span style="display:flex;"><span>spcolor(gcf)
+</span></span></code></pre></div></article>
+ 
+      
+
+      <footer class="book-footer">
+        
+  <div class="flex flex-wrap justify-between">
+
+
+
+
+
+</div>
+
+
+
+  <script>(function(){function e(n){const e=window.getSelection(),t=document.createRange();t.selectNodeContents(n),e.removeAllRanges(),e.addRange(t)}document.querySelectorAll("pre code").forEach(t=>{t.addEventListener("click",function(){e(t.parentElement),navigator.clipboard&&navigator.clipboard.writeText(t.parentElement.textContent)})})})()</script>
+
+
+ 
+        
+      </footer>
+
+      
+  
+  <div class="book-comments">
+
+</div>
+  
+ 
+
+      <label for="menu-control" class="hidden book-menu-overlay"></label>
+    </div>
+
+    
+    <aside class="book-toc">
+      <div class="book-toc-content">
+        
+  
+<nav id="TableOfContents">
+  <ul>
+    <li><a href="#font-colordd8452-spcolor-font"><font color="#DD8452"> spcolor </font></a>
+      <ul>
+        <li><a href="#说明">说明</a></li>
+        <li><a href="#输入">输入</a>
+          <ul>
+            <li><a href="#num">num</a></li>
+            <li><a href="#str">str</a></li>
+            <li><a href="#hfig">hfig</a></li>
+          </ul>
+        </li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+
+
+ 
+      </div>
+    </aside>
+    
+  </main>
+
+  
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
