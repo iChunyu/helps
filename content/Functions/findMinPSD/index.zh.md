@@ -6,6 +6,10 @@ title: "findMinPSD"
 
 搜索关心频段内的最优功率谱密度。这里的最优定义为在给定积分区间内谱密度（以 {{< katex >}}\mathrm{*^2/Hz}{{< /katex >}} 为单位）的积分最小。
 
+{{< hint info >}}
+本程序依赖于 [`iLPSD`]({{< ref "../iLPSD/index.zh.md" >}}) 
+{{< /hint >}}
+
 ## 说明
 ---
 
@@ -67,7 +71,3 @@ title: "findMinPSD"
 
 是否绘制扫描功率谱的时频曲面，为逻辑变量，默认值为 `true`。
 
-
-## 依赖
-
-当设置功率谱算法为 `'LPSD'` 时，该程序依赖于 [`iLPSD`]({{< ref "../iLPSD/index.zh.md" >}}) 

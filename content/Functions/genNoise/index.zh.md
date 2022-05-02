@@ -6,6 +6,10 @@ title: "genNoise"
 
 产生任意谱密度的噪声。
 
+{{< hint info >}}
+本程序依赖于 [`iLPSD`]({{< ref "../iLPSD/index.zh.md" >}}) 
+{{< /hint >}}
+
 ## 说明
 ---
 
@@ -38,11 +42,6 @@ title: "genNoise"
 ### x
 
 生成的噪声数据。
-
-
-## 依赖
-
-本程序在绘图验证生成的噪声时，依赖于 [`iLPSD`]({{< ref "../iLPSD/index.zh.md" >}})。
 
 ## 使用示例
 

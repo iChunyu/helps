@@ -6,6 +6,10 @@ title: "InitPlot"
 
 初始化绘图设置。
 
+{{< hint info >}}
+本程序依赖于 [`spcolor`]({{< ref "../spcolor/index.zh.md" >}}) 
+{{< /hint >}}
+
 ## 说明
 ---
 
@@ -35,10 +39,6 @@ title: "InitPlot"
 {{< hint info >}}
 本程序将 `'latex'` 设置为默认解释器，在使用 `xlabel` 等进行文字标注时，若设计数学符号，必须使用 `$` 进行标注。如 `ylabel('$V_\mathrm{fed}\,\mathrm{[V/\sqrt{Hz}]}$')`。
 {{< /hint >}}
-
-## 依赖
-
-本程序同时更改了绘图的颜色选项，依赖于函数 [`spcolor`]({{< ref "../spcolor/index.zh.md" >}})。
 
 ## 使用示例
 
