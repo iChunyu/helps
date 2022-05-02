@@ -11,7 +11,7 @@
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://iChunyu.github.io/helps/functions/findminpsd/</guid>
-      <description>findMinPSD # 搜索关心频段内的最优功率谱密度。这里的最优定义为在给定积分区间内谱密度（以 \(\mathrm{*^2/Hz}\) 为单位）的积分最小。 说明 # findMinPSD(data,fs) 使用默认设置搜索最优功率谱密度并</description>
+      <description>findMinPSD # 搜索关心频段内的最优功率谱密度。这里的最优定义为在给定积分区间内谱密度（以 \(\mathrm{*^2/Hz}\) 为单位）的积分最小。 本程序依赖于 iLPSD 说明 # findMinPSD(data,fs) 使用默认设置搜索最</description>
     </item>
     
     <item>
@@ -20,7 +20,16 @@
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://iChunyu.github.io/helps/functions/gennoise/</guid>
-      <description>genNoise # 产生任意谱密度的噪声。 说明 # genNoise(ASD,fs) 根据给定谱密度和采样率构造噪声数据，并绘制其功率谱密度与目标曲线对比。 x = genNoise(ASD,fs,N) 根据给定的谱密度、采样率和点数</description>
+      <description>genNoise # 产生任意谱密度的噪声。 本程序依赖于 iLPSD 说明 # genNoise(ASD,fs) 根据给定谱密度和采样率构造噪声数据，并绘制其功率谱密度与目标曲线对比。 x = genNoise(ASD,fs,N) 根据给定的谱密度</description>
+    </item>
+    
+    <item>
+      <title>getCurrentPSD</title>
+      <link>https://iChunyu.github.io/helps/functions/getcurrentpsd/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://iChunyu.github.io/helps/functions/getcurrentpsd/</guid>
+      <description>getCurrentPSD # 获取当前图窗内数据的功率谱密度。 本程序依赖于 iLPSD 说明 # getCurrentPSD(fs) 计算当前图窗内数据的功率谱密度，并在新的图窗中绘制结果。 getCurrentPSD(fs,Name,Value) 根据键值对参数控制 iLPSD 算法</description>
     </item>
     
     <item>
@@ -38,7 +47,7 @@
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://iChunyu.github.io/helps/functions/initplot/</guid>
-      <description>InitPlot # 初始化绘图设置。 说明 # InitPlot 使用默认值值初始化绘图设置。 InitPlot(LineWidth,FontSize,WindowStyle,Interperter) 根据指定值初始化绘图设置。 InitPlot(&#39;remove&#39;) 移除自定义设置，恢复 MATLAB 默认值。 输入 # LindWidth # 绘图采用的线宽</description>
+      <description>InitPlot # 初始化绘图设置。 本程序依赖于 spcolor 说明 # InitPlot 使用默认值值初始化绘图设置。 InitPlot(LineWidth,FontSize,WindowStyle,Interperter) 根据指定值初始化绘图设置。 InitPlot(&#39;remove&#39;) 移除自定义设置，恢复 MATLAB 默认值。 输入 # LindWidth #</description>
     </item>
     
     <item>

@@ -3,10 +3,10 @@
 <head>
   <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="description" content="genNoise # 产生任意谱密度的噪声。 说明 # genNoise(ASD,fs) 根据给定谱密度和采样率构造噪声数据，并绘制其功率谱密度与目标曲线对比。 x = genNoise(ASD,fs,N) 根据给定的谱密度、采样率和点数">
+<meta name="description" content="genNoise # 产生任意谱密度的噪声。 本程序依赖于 iLPSD 说明 # genNoise(ASD,fs) 根据给定谱密度和采样率构造噪声数据，并绘制其功率谱密度与目标曲线对比。 x = genNoise(ASD,fs,N) 根据给定的谱密度">
 <meta name="theme-color" content="#FFFFFF">
 <meta name="color-scheme" content="light dark"><meta property="og:title" content="genNoise" />
-<meta property="og:description" content="genNoise # 产生任意谱密度的噪声。 说明 # genNoise(ASD,fs) 根据给定谱密度和采样率构造噪声数据，并绘制其功率谱密度与目标曲线对比。 x = genNoise(ASD,fs,N) 根据给定的谱密度、采样率和点数" />
+<meta property="og:description" content="genNoise # 产生任意谱密度的噪声。 本程序依赖于 iLPSD 说明 # genNoise(ASD,fs) 根据给定谱密度和采样率构造噪声数据，并绘制其功率谱密度与目标曲线对比。 x = genNoise(ASD,fs,N) 根据给定的谱密度" />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://iChunyu.github.io/helps/functions/gennoise/" /><meta property="article:section" content="Functions" />
 
@@ -17,7 +17,7 @@
 <link rel="icon" href="/helps/favicon.png" type="image/x-icon">
 <link rel="stylesheet" href="/helps/book.min.97cfda4f5e3c9fa49a2bf8d401f4ddc0eec576c99cdcf6afbec19173200c37db.css" integrity="sha256-l8/aT148n6SaK/jUAfTdwO7Fdsmc3PavvsGRcyAMN9s=" crossorigin="anonymous">
   <script defer src="/helps/flexsearch.min.js"></script>
-  <script defer src="/helps/zh.search.min.3f981eaa9efce23b53ad18b6ec5446b3b184035d1d9371bf1a44084680daf854.js" integrity="sha256-P5geqp784jtTrRi27FRGs7GEA10dk3G/GkQIRoDa&#43;FQ=" crossorigin="anonymous"></script>
+  <script defer src="/helps/zh.search.min.20820f2475387882543b6994415e10d385b5e1c47f292728fe692517655f4151.js" integrity="sha256-IIIPJHU4eIJUO2mUQV4Q04W14cR/KSco/mklF2VfQVE=" crossorigin="anonymous"></script>
 
   <script defer src="/helps/sw.min.f64fb8d201d1f8630596aa9dd14f82281dc1546c8ccca61a6bd182e5854cc09c.js" integrity="sha256-9k&#43;40gHR&#43;GMFlqqd0U&#43;CKB3BVGyMzKYaa9GC5YVMwJw=" crossorigin="anonymous"></script>
 <!--
@@ -143,6 +143,19 @@ https://github.com/alex-shpak/hugo-book
   
 
   
+    <a href="/helps/functions/getcurrentpsd/" class="">getCurrentPSD</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
     <a href="/helps/functions/ilpsd/" class="">iLPSD</a>
   
 
@@ -248,7 +261,6 @@ https://github.com/alex-shpak/hugo-book
             <li><a href="#x">x</a></li>
           </ul>
         </li>
-        <li><a href="#依赖">依赖</a></li>
         <li><a href="#使用示例">使用示例</a></li>
       </ul>
     </li>
@@ -269,6 +281,11 @@ https://github.com/alex-shpak/hugo-book
   <a class="anchor" href="#font-colordd8452-gennoise-font">#</a>
 </h1>
 <p>产生任意谱密度的噪声。</p>
+<blockquote class="book-hint info">
+  本程序依赖于 
+  <a href="https://iChunyu.github.io/helps/functions/ilpsd/"><code>iLPSD</code></a>
+</blockquote>
+
 <h2 id="说明">
   说明
   <a class="anchor" href="#%e8%af%b4%e6%98%8e">#</a>
@@ -320,12 +337,6 @@ https://github.com/alex-shpak/hugo-book
   <a class="anchor" href="#x">#</a>
 </h3>
 <p>生成的噪声数据。</p>
-<h2 id="依赖">
-  依赖
-  <a class="anchor" href="#%e4%be%9d%e8%b5%96">#</a>
-</h2>
-<p>本程序在绘图验证生成的噪声时，依赖于 
-  <a href="https://iChunyu.github.io/helps/functions/ilpsd/"><code>iLPSD</code></a>。</p>
 <h2 id="使用示例">
   使用示例
   <a class="anchor" href="#%e4%bd%bf%e7%94%a8%e7%a4%ba%e4%be%8b">#</a>
@@ -391,7 +402,6 @@ https://github.com/alex-shpak/hugo-book
             <li><a href="#x">x</a></li>
           </ul>
         </li>
-        <li><a href="#依赖">依赖</a></li>
         <li><a href="#使用示例">使用示例</a></li>
       </ul>
     </li>
