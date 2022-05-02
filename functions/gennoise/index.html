@@ -3,16 +3,16 @@
 <head>
   <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="description" content="InitPlot # 初始化绘图设置。 说明 # InitPlot 使用默认值值初始化绘图设置。 InitPlot(LineWidth,FontSize,WindowStyle,Interperter) 根据指定值初始化绘图设置。 InitPlot(&#39;remove&#39;) 移除自定义设置，恢复 MATLAB 默认值。 输入 # LindWidth # 绘图采用的线宽">
+<meta name="description" content="genNoise # 产生任意谱密度的噪声。 说明 # genNoise(ASD,fs) 根据给定谱密度和采样率构造噪声数据，并绘制其功率谱密度与目标曲线对比。 x = genNoise(ASD,fs,N) 根据给定的谱密度、采样率和点数">
 <meta name="theme-color" content="#FFFFFF">
-<meta name="color-scheme" content="light dark"><meta property="og:title" content="InitPlot" />
-<meta property="og:description" content="InitPlot # 初始化绘图设置。 说明 # InitPlot 使用默认值值初始化绘图设置。 InitPlot(LineWidth,FontSize,WindowStyle,Interperter) 根据指定值初始化绘图设置。 InitPlot(&#39;remove&#39;) 移除自定义设置，恢复 MATLAB 默认值。 输入 # LindWidth # 绘图采用的线宽" />
+<meta name="color-scheme" content="light dark"><meta property="og:title" content="genNoise" />
+<meta property="og:description" content="genNoise # 产生任意谱密度的噪声。 说明 # genNoise(ASD,fs) 根据给定谱密度和采样率构造噪声数据，并绘制其功率谱密度与目标曲线对比。 x = genNoise(ASD,fs,N) 根据给定的谱密度、采样率和点数" />
 <meta property="og:type" content="article" />
-<meta property="og:url" content="https://iChunyu.github.io/helps/functions/initplot/" /><meta property="article:section" content="Functions" />
+<meta property="og:url" content="https://iChunyu.github.io/helps/functions/gennoise/" /><meta property="article:section" content="Functions" />
 
 
 
-<title>InitPlot | SpringLib</title>
+<title>genNoise | SpringLib</title>
 <link rel="manifest" href="/helps/manifest.json">
 <link rel="icon" href="/helps/favicon.png" type="image/x-icon">
 <link rel="stylesheet" href="/helps/book.min.97cfda4f5e3c9fa49a2bf8d401f4ddc0eec576c99cdcf6afbec19173200c37db.css" integrity="sha256-l8/aT148n6SaK/jUAfTdwO7Fdsmc3PavvsGRcyAMN9s=" crossorigin="anonymous">
@@ -130,7 +130,7 @@ https://github.com/alex-shpak/hugo-book
   
 
   
-    <a href="/helps/functions/gennoise/" class="">genNoise</a>
+    <a href="/helps/functions/gennoise/" class=" active">genNoise</a>
   
 
         </li>
@@ -156,7 +156,7 @@ https://github.com/alex-shpak/hugo-book
   
 
   
-    <a href="/helps/functions/initplot/" class=" active">InitPlot</a>
+    <a href="/helps/functions/initplot/" class="">InitPlot</a>
   
 
         </li>
@@ -216,7 +216,7 @@ https://github.com/alex-shpak/hugo-book
     <img src="/helps/svg/menu.svg" class="book-icon" alt="Menu" />
   </label>
 
-  <strong>InitPlot</strong>
+  <strong>genNoise</strong>
 
   <label for="toc-control">
     
@@ -232,15 +232,20 @@ https://github.com/alex-shpak/hugo-book
   
 <nav id="TableOfContents">
   <ul>
-    <li><a href="#font-colordd8452-initplot-font"><font color="#DD8452"> InitPlot </font></a>
+    <li><a href="#font-colordd8452-gennoise-font"><font color="#DD8452"> genNoise </font></a>
       <ul>
         <li><a href="#说明">说明</a></li>
         <li><a href="#输入">输入</a>
           <ul>
-            <li><a href="#lindwidth">LindWidth</a></li>
-            <li><a href="#fontsize">FontSize</a></li>
-            <li><a href="#windowstyle">WindowStyle</a></li>
-            <li><a href="#interpreter">Interpreter</a></li>
+            <li><a href="#asd">ASD</a></li>
+            <li><a href="#fs">fs</a></li>
+            <li><a href="#n">N</a></li>
+            <li><a href="#plt">plt</a></li>
+          </ul>
+        </li>
+        <li><a href="#输出">输出</a>
+          <ul>
+            <li><a href="#x">x</a></li>
           </ul>
         </li>
         <li><a href="#依赖">依赖</a></li>
@@ -259,62 +264,77 @@ https://github.com/alex-shpak/hugo-book
 
       
       
-  <article class="markdown"><h1 id="font-colordd8452-initplot-font">
-  <font color="#DD8452"> InitPlot </font>
-  <a class="anchor" href="#font-colordd8452-initplot-font">#</a>
+  <article class="markdown"><h1 id="font-colordd8452-gennoise-font">
+  <font color="#DD8452"> genNoise </font>
+  <a class="anchor" href="#font-colordd8452-gennoise-font">#</a>
 </h1>
-<p>初始化绘图设置。</p>
+<p>产生任意谱密度的噪声。</p>
 <h2 id="说明">
   说明
   <a class="anchor" href="#%e8%af%b4%e6%98%8e">#</a>
 </h2>
 <hr>
 <ul>
-<li><code>InitPlot</code> 使用默认值值初始化绘图设置。</li>
-<li><code>InitPlot(LineWidth,FontSize,WindowStyle,Interperter)</code> 根据指定值初始化绘图设置。</li>
-<li><code>InitPlot('remove')</code> 移除自定义设置，恢复 MATLAB 默认值。</li>
+<li><code>genNoise(ASD,fs)</code> 根据给定谱密度和采样率构造噪声数据，并绘制其功率谱密度与目标曲线对比。</li>
+<li><code>x = genNoise(ASD,fs,N)</code> 根据给定的谱密度、采样率和点数生成噪声数据。</li>
+<li><code>x = genNoise(ASD,fs,N,plt)</code> 生成给定噪声数据并手动控制是否绘图验证。</li>
 </ul>
 <h2 id="输入">
   输入
   <a class="anchor" href="#%e8%be%93%e5%85%a5">#</a>
 </h2>
 <hr>
-<h3 id="lindwidth">
-  LindWidth
-  <a class="anchor" href="#lindwidth">#</a>
+<h3 id="asd">
+  ASD
+  <a class="anchor" href="#asd">#</a>
 </h3>
-<p>绘图采用的线宽，默认值为 <code>2</code>。</p>
-<h3 id="fontsize">
-  FontSize
-  <a class="anchor" href="#fontsize">#</a>
+<p>目标噪声谱密度的匿名函数，为函数句柄。例如 <code>ASD = @(f) 1./sqrt(f)</code> 为 
+<link rel="stylesheet" href="/helps/katex/katex.min.css" />
+<script defer src="/helps/katex/katex.min.js"></script>
+<script defer src="/helps/katex/auto-render.min.js" onload="renderMathInElement(document.body);"></script><span>
+  \(1/f\)
+</span>
+ 噪声。</p>
+<h3 id="fs">
+  fs
+  <a class="anchor" href="#fs">#</a>
 </h3>
-<p>绘图采用的坐标轴字号，默认值为 <code>20</code>。</p>
-<h3 id="windowstyle">
-  WindowStyle
-  <a class="anchor" href="#windowstyle">#</a>
+<p>噪声数据的采样率，为标量。</p>
+<h3 id="n">
+  N
+  <a class="anchor" href="#n">#</a>
 </h3>
-<p>绘图窗口样式，默认值为 <code>'docked'</code>，即将所有绘图以标签页的形式集中在一个绘图窗口。其他可选项有 <code>'normal'</code>（MATLAB 默认值），<code>'modal'</code>。</p>
-<h3 id="interpreter">
-  Interpreter
-  <a class="anchor" href="#interpreter">#</a>
+<p>噪声数据点数，为标量，默认值为 <code>1024</code>。</p>
+<h3 id="plt">
+  plt
+  <a class="anchor" href="#plt">#</a>
 </h3>
-<p>绘图标记时文字的解释器，默认值为 <code>'latex'</code>。其他可选项有 <code>'tex'</code>（MATLAB 默认值）、<code>'none'</code>。</p>
-<blockquote class="book-hint info">
-  本程序将 <code>'latex'</code> 设置为默认解释器，在使用 <code>xlabel</code> 等进行文字标注时，若设计数学符号，必须使用 <code>$</code> 进行标注。如 <code>ylabel('$V_\mathrm{fed}\,\mathrm{[V/\sqrt{Hz}]}$')</code>。
-</blockquote>
-
+<p>是否绘图以对比生成的噪声和目标谱密度，为逻辑值，默认为 <code>false</code>。如果该函数没有输出，则函数一定绘图进行对比。</p>
+<h2 id="输出">
+  输出
+  <a class="anchor" href="#%e8%be%93%e5%87%ba">#</a>
+</h2>
+<hr>
+<h3 id="x">
+  x
+  <a class="anchor" href="#x">#</a>
+</h3>
+<p>生成的噪声数据。</p>
 <h2 id="依赖">
   依赖
   <a class="anchor" href="#%e4%be%9d%e8%b5%96">#</a>
 </h2>
-<p>本程序同时更改了绘图的颜色选项，依赖于函数 
-  <a href="https://iChunyu.github.io/helps/functions/spcolor/"><code>spcolor</code></a>。</p>
+<p>本程序在绘图验证生成的噪声时，依赖于 
+  <a href="https://iChunyu.github.io/helps/functions/ilpsd/"><code>iLPSD</code></a>。</p>
 <h2 id="使用示例">
   使用示例
   <a class="anchor" href="#%e4%bd%bf%e7%94%a8%e7%a4%ba%e4%be%8b">#</a>
 </h2>
-<p>使用 <code>edit(fullfile(userpath,'startup.m'))</code> 建立 <code>startup</code> 脚本，该脚本会在 MATLAB 启动时自动运行。在该脚本中写入该函数，即可自动使用该绘图设置。</p>
-</article>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-matlab" data-lang="matlab"><span style="display:flex;"><span>ASD = @(f) <span style="color:#ae81ff">0.07</span><span style="color:#f92672">./</span>f <span style="color:#f92672">+</span> <span style="color:#ae81ff">1</span>;
+</span></span><span style="display:flex;"><span>fs = <span style="color:#ae81ff">10</span>;
+</span></span><span style="display:flex;"><span>N = <span style="color:#ae81ff">1e4</span>;
+</span></span><span style="display:flex;"><span>x = genNoise(ASD,fs,N,true);
+</span></span></code></pre></div></article>
  
       
 
@@ -355,15 +375,20 @@ https://github.com/alex-shpak/hugo-book
   
 <nav id="TableOfContents">
   <ul>
-    <li><a href="#font-colordd8452-initplot-font"><font color="#DD8452"> InitPlot </font></a>
+    <li><a href="#font-colordd8452-gennoise-font"><font color="#DD8452"> genNoise </font></a>
       <ul>
         <li><a href="#说明">说明</a></li>
         <li><a href="#输入">输入</a>
           <ul>
-            <li><a href="#lindwidth">LindWidth</a></li>
-            <li><a href="#fontsize">FontSize</a></li>
-            <li><a href="#windowstyle">WindowStyle</a></li>
-            <li><a href="#interpreter">Interpreter</a></li>
+            <li><a href="#asd">ASD</a></li>
+            <li><a href="#fs">fs</a></li>
+            <li><a href="#n">N</a></li>
+            <li><a href="#plt">plt</a></li>
+          </ul>
+        </li>
+        <li><a href="#输出">输出</a>
+          <ul>
+            <li><a href="#x">x</a></li>
           </ul>
         </li>
         <li><a href="#依赖">依赖</a></li>
