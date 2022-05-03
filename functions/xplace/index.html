@@ -3,16 +3,16 @@
 <head>
   <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="description" content="findMinPSD # 搜索关心频段内的最优功率谱密度。这里的最优定义为在给定积分区间内谱密度（以 \(\mathrm{*^2/Hz}\) 为单位）的积分最小。 本程序依赖于 iLPSD 说明 # findMinPSD(data,fs) 使用默认设置搜索最">
+<meta name="description" content="xplace # 使用符号计算实现离散闭环系统的极点配置。 说明 # Para = xplace(A,p1,p2,T) 根据闭环系统的状态矩阵进行极点配置，并返回设计参数。 [Para,Aout] = xplace(A,p1,p2,T,Name,Value) 根据键值对参数设置进行极点">
 <meta name="theme-color" content="#FFFFFF">
-<meta name="color-scheme" content="light dark"><meta property="og:title" content="findMinPSD" />
-<meta property="og:description" content="findMinPSD # 搜索关心频段内的最优功率谱密度。这里的最优定义为在给定积分区间内谱密度（以 \(\mathrm{*^2/Hz}\) 为单位）的积分最小。 本程序依赖于 iLPSD 说明 # findMinPSD(data,fs) 使用默认设置搜索最" />
+<meta name="color-scheme" content="light dark"><meta property="og:title" content="xplace" />
+<meta property="og:description" content="xplace # 使用符号计算实现离散闭环系统的极点配置。 说明 # Para = xplace(A,p1,p2,T) 根据闭环系统的状态矩阵进行极点配置，并返回设计参数。 [Para,Aout] = xplace(A,p1,p2,T,Name,Value) 根据键值对参数设置进行极点" />
 <meta property="og:type" content="article" />
-<meta property="og:url" content="https://iChunyu.github.io/helps/functions/findminpsd/" /><meta property="article:section" content="Functions" />
+<meta property="og:url" content="https://iChunyu.github.io/helps/functions/xplace/" /><meta property="article:section" content="Functions" />
 
 
 
-<title>findMinPSD | SpringLib</title>
+<title>xplace | SpringLib</title>
 <link rel="manifest" href="/helps/manifest.json">
 <link rel="icon" href="/helps/favicon.png" type="image/x-icon">
 <link rel="stylesheet" href="/helps/book.min.97cfda4f5e3c9fa49a2bf8d401f4ddc0eec576c99cdcf6afbec19173200c37db.css" integrity="sha256-l8/aT148n6SaK/jUAfTdwO7Fdsmc3PavvsGRcyAMN9s=" crossorigin="anonymous">
@@ -117,7 +117,7 @@ https://github.com/alex-shpak/hugo-book
   
 
   
-    <a href="/helps/functions/findminpsd/" class=" active">findMinPSD</a>
+    <a href="/helps/functions/findminpsd/" class="">findMinPSD</a>
   
 
         </li>
@@ -195,7 +195,7 @@ https://github.com/alex-shpak/hugo-book
   
 
   
-    <a href="/helps/functions/xplace/" class="">xplace</a>
+    <a href="/helps/functions/xplace/" class=" active">xplace</a>
   
 
         </li>
@@ -242,7 +242,7 @@ https://github.com/alex-shpak/hugo-book
     <img src="/helps/svg/menu.svg" class="book-icon" alt="Menu" />
   </label>
 
-  <strong>findMinPSD</strong>
+  <strong>xplace</strong>
 
   <label for="toc-control">
     
@@ -258,30 +258,27 @@ https://github.com/alex-shpak/hugo-book
   
 <nav id="TableOfContents">
   <ul>
-    <li><a href="#font-colordd8452-findminpsd-font"><font color="#DD8452"> findMinPSD </font></a>
+    <li><a href="#font-colordd8452-xplace-font"><font color="#DD8452"> xplace </font></a>
       <ul>
         <li><a href="#说明">说明</a></li>
         <li><a href="#输入">输入</a>
           <ul>
-            <li><a href="#data">data</a></li>
-            <li><a href="#fs">fs</a></li>
+            <li><a href="#a">A</a></li>
+            <li><a href="#p1p2">p1/p2</a></li>
+            <li><a href="#t">T</a></li>
           </ul>
         </li>
         <li><a href="#输出">输出</a>
           <ul>
-            <li><a href="#idx">idx</a></li>
-            <li><a href="#pxx">pxx</a></li>
-            <li><a href="#f">f</a></li>
+            <li><a href="#para">Para</a></li>
+            <li><a href="#aout">Aout</a></li>
           </ul>
         </li>
         <li><a href="#参数">参数</a>
           <ul>
-            <li><a href="#fmin">fmin</a></li>
-            <li><a href="#fint">fint</a></li>
-            <li><a href="#xi">xi</a></li>
             <li><a href="#method">method</a></li>
-            <li><a href="#jdes">Jdes</a></li>
-            <li><a href="#pfig">pfig</a></li>
+            <li><a href="#tunable">tunable</a></li>
+            <li><a href="#overwrite">overwrite</a></li>
           </ul>
         </li>
       </ul>
@@ -298,49 +295,47 @@ https://github.com/alex-shpak/hugo-book
 
       
       
-  <article class="markdown"><h1 id="font-colordd8452-findminpsd-font">
-  <font color="#DD8452"> findMinPSD </font>
-  <a class="anchor" href="#font-colordd8452-findminpsd-font">#</a>
+  <article class="markdown"><h1 id="font-colordd8452-xplace-font">
+  <font color="#DD8452"> xplace </font>
+  <a class="anchor" href="#font-colordd8452-xplace-font">#</a>
 </h1>
-<p>搜索关心频段内的最优功率谱密度。这里的最优定义为在给定积分区间内谱密度（以 
-<link rel="stylesheet" href="/helps/katex/katex.min.css" />
-<script defer src="/helps/katex/katex.min.js"></script>
-<script defer src="/helps/katex/auto-render.min.js" onload="renderMathInElement(document.body);"></script><span>
-  \(\mathrm{*^2/Hz}\)
-</span>
- 为单位）的积分最小。</p>
-<blockquote class="book-hint info">
-  本程序依赖于 
-  <a href="https://iChunyu.github.io/helps/functions/ilpsd/"><code>iLPSD</code></a>
-</blockquote>
-
+<p>使用符号计算实现离散闭环系统的极点配置。</p>
 <h2 id="说明">
   说明
   <a class="anchor" href="#%e8%af%b4%e6%98%8e">#</a>
 </h2>
 <hr>
 <ul>
-<li><code>findMinPSD(data,fs)</code> 使用默认设置搜索最优功率谱密度并绘制时频曲面。</li>
-<li><code>idx = findMinPSD(data,fs,Name,Value)</code> 根据键值对参数设置搜索最优功率谱密度，并返回对应的时域数据索引。</li>
-<li><code>[pxx,f] = findMinPSD(data,fs,Name,Value)</code> 根据键值对参数设置搜索最优功率谱密度，并返回谱密度估计值。</li>
-<li><code>[idx,pxx,f] = findMinPSD(data,fs,Name,Value)</code> 根据键值对参数设置搜索最优功率谱密度，并返回索引和谱密度估计值。</li>
+<li><code>Para = xplace(A,p1,p2,T)</code> 根据闭环系统的状态矩阵进行极点配置，并返回设计参数。</li>
+<li><code>[Para,Aout] = xplace(A,p1,p2,T,Name,Value)</code> 根据键值对参数设置进行极点配置，并返回设计参数和状态矩阵。</li>
 </ul>
 <h2 id="输入">
   输入
   <a class="anchor" href="#%e8%be%93%e5%85%a5">#</a>
 </h2>
 <hr>
-<h3 id="data">
-  data
-  <a class="anchor" href="#data">#</a>
+<h3 id="a">
+  A
+  <a class="anchor" href="#a">#</a>
 </h3>
-<p>时域数据，为一维向量。</p>
-<h3 id="fs">
-  fs
-  <a class="anchor" href="#fs">#</a>
+<p>闭环系统的状态矩阵，为符号变量矩阵。待设计的参数定义为符号变量。</p>
+<h3 id="p1p2">
+  p1/p2
+  <a class="anchor" href="#p1p2">#</a>
 </h3>
-<p>采样率，为标量，单位为 <span>
+<p>极点设计参数，受参数 <code>'method'</code> 控制，默认为闭环系统最大、最小极点相应的以 
+<link rel="stylesheet" href="/helps/katex/katex.min.css" />
+<script defer src="/helps/katex/katex.min.js"></script>
+<script defer src="/helps/katex/auto-render.min.js" onload="renderMathInElement(document.body);"></script><span>
   \(\mathrm{Hz}\)
+</span>
+ 为单位的频率。</p>
+<h3 id="t">
+  T
+  <a class="anchor" href="#t">#</a>
+</h3>
+<p>采样时间，单位为 <span>
+  \(\mathrm{s}\)
 </span>
 。</p>
 <h2 id="输出">
@@ -348,68 +343,53 @@ https://github.com/alex-shpak/hugo-book
   <a class="anchor" href="#%e8%be%93%e5%87%ba">#</a>
 </h2>
 <hr>
-<h3 id="idx">
-  idx
-  <a class="anchor" href="#idx">#</a>
+<h3 id="para">
+  Para
+  <a class="anchor" href="#para">#</a>
 </h3>
-<p>最优谱密度的时域索引，包含开始位置和终止位置。当函数只有一个输出时输出该索引；或当函数有三个输出时，该索引为第一个输出。</p>
-<h3 id="pxx">
-  pxx
-  <a class="anchor" href="#pxx">#</a>
+<p>参数设计值，为结构体。</p>
+<h3 id="aout">
+  Aout
+  <a class="anchor" href="#aout">#</a>
 </h3>
-<p>估计的最优功率谱密度，单位为 <span>
-  \(\mathrm{*^2/Hz}\)
-</span>
-。当函数有两个输出时，谱密度为第一个输出；或当函数具有三个输出时，谱密度为第二个输出。</p>
-<h3 id="f">
-  f
-  <a class="anchor" href="#f">#</a>
-</h3>
-<p>谱密度对应的频率点，单位为 <span>
-  \(\mathrm{Hz}\)
-</span>
-。当函数有多个输出时，该频率为最后一个输出。</p>
+<p>设计之后的状态矩阵，默认为数值矩阵。可通过参数 <code>'tunable'</code> 将其设置为可调矩阵（<code>genmat</code> 变量）。</p>
 <h2 id="参数">
   参数
   <a class="anchor" href="#%e5%8f%82%e6%95%b0">#</a>
 </h2>
 <hr>
-<h3 id="fmin">
-  fmin
-  <a class="anchor" href="#fmin">#</a>
-</h3>
-<p>计算功率谱密度时关心的最小频率，为标量，单位为 <span>
-  \(\mathrm{Hz}\)
-</span>
-。默认值为 <code>1e-3</code>。</p>
-<h3 id="fint">
-  fint
-  <a class="anchor" href="#fint">#</a>
-</h3>
-<p>计算最优功率谱的积分区间，包含两个数值，对应单位为 <span>
-  \(\mathrm{Hz}\)
-</span>
-。默认值为 <code>[1e-2 1e-1]</code>。</p>
-<h3 id="xi">
-  xi
-  <a class="anchor" href="#xi">#</a>
-</h3>
-<p>数据分段扫描时的重叠率，为 0～1 之间的小数，默认值为 <code>0.8</code>。</p>
 <h3 id="method">
   method
   <a class="anchor" href="#method">#</a>
 </h3>
-<p>计算功率谱的算法，可选值为 <code>'periodogram'</code> 和 <code>'LPSD'</code>（同 <code>'iLPSD'</code>），默认值为 <code>'periodogram'</code>。</p>
-<h3 id="jdes">
-  Jdes
-  <a class="anchor" href="#jdes">#</a>
+<p>参数设计采用的方法，可选值为：</p>
+<ul>
+<li><code>'lambda'</code>：基于特征值 <span>
+  \(\lambda\)
+</span>
+ 进行参数设计，此时输入 <code>p1</code> 和 <code>p2</code> 为特征值对应的频率；</li>
+<li><code>'gamma'</code>：基于补特征值 <span>
+  \(\gamma = 1-\lambda\)
+</span>
+ 进行参数设计，此时 <code>p1</code> 为基准频率（单位为 <span>
+  \(\mathrm{Hz}\)
+</span>
+），<code>p2</code> 为指数。采用 EMC 极点配置策略。</li>
+</ul>
+<h3 id="tunable">
+  tunable
+  <a class="anchor" href="#tunable">#</a>
 </h3>
-<p>当设置功率谱算法为 <code>'LPSD'</code> 时该选项有效，为 LPSD 算法的期望频率点数，为标量。默认值为 <code>500</code>。</p>
-<h3 id="pfig">
-  pfig
-  <a class="anchor" href="#pfig">#</a>
+<p>当输出设计结果 <code>Aout</code> 时，该选项用于控制其是否为可调矩阵，为逻辑值，默认为 <code>false</code>。</p>
+<h3 id="overwrite">
+  overwrite
+  <a class="anchor" href="#overwrite">#</a>
 </h3>
-<p>是否绘制扫描功率谱的时频曲面，为逻辑变量，默认值为 <code>true</code>。</p>
+<p>是否将设计结果直接输出到工作空间，默认值为 <code>false</code>。</p>
+<blockquote class="book-hint danger">
+  当该选项设置为 <code>true</code> 时，运行该函数会将设计参数输出到工作空间。若工作空间存在同名变量，将会被此函数覆盖。
+</blockquote>
+
 </article>
  
       
@@ -451,30 +431,27 @@ https://github.com/alex-shpak/hugo-book
   
 <nav id="TableOfContents">
   <ul>
-    <li><a href="#font-colordd8452-findminpsd-font"><font color="#DD8452"> findMinPSD </font></a>
+    <li><a href="#font-colordd8452-xplace-font"><font color="#DD8452"> xplace </font></a>
       <ul>
         <li><a href="#说明">说明</a></li>
         <li><a href="#输入">输入</a>
           <ul>
-            <li><a href="#data">data</a></li>
-            <li><a href="#fs">fs</a></li>
+            <li><a href="#a">A</a></li>
+            <li><a href="#p1p2">p1/p2</a></li>
+            <li><a href="#t">T</a></li>
           </ul>
         </li>
         <li><a href="#输出">输出</a>
           <ul>
-            <li><a href="#idx">idx</a></li>
-            <li><a href="#pxx">pxx</a></li>
-            <li><a href="#f">f</a></li>
+            <li><a href="#para">Para</a></li>
+            <li><a href="#aout">Aout</a></li>
           </ul>
         </li>
         <li><a href="#参数">参数</a>
           <ul>
-            <li><a href="#fmin">fmin</a></li>
-            <li><a href="#fint">fint</a></li>
-            <li><a href="#xi">xi</a></li>
             <li><a href="#method">method</a></li>
-            <li><a href="#jdes">Jdes</a></li>
-            <li><a href="#pfig">pfig</a></li>
+            <li><a href="#tunable">tunable</a></li>
+            <li><a href="#overwrite">overwrite</a></li>
           </ul>
         </li>
       </ul>

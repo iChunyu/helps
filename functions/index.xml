@@ -59,5 +59,14 @@
       <description>spcolor # 设置绘图颜色。 说明 # spcolor 输出当前配色方案的颜色名字及其归一化 RGB 值。 cVec = spcolor(num) 根据数字索引输出对应颜色的 RGB 值。 cVec = spcolor(str) 根据名称索引输出对应颜色的 RGB</description>
     </item>
     
+    <item>
+      <title>xplace</title>
+      <link>https://iChunyu.github.io/helps/functions/xplace/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://iChunyu.github.io/helps/functions/xplace/</guid>
+      <description>xplace # 使用符号计算实现离散闭环系统的极点配置。 说明 # Para = xplace(A,p1,p2,T) 根据闭环系统的状态矩阵进行极点配置，并返回设计参数。 [Para,Aout] = xplace(A,p1,p2,T,Name,Value) 根据键值对参数设置进行极点</description>
+    </item>
+    
   </channel>
 </rss>
