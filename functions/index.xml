@@ -60,6 +60,15 @@
     </item>
     
     <item>
+      <title>trackdiff</title>
+      <link>https://iChunyu.github.io/helps/functions/trackdiff/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://iChunyu.github.io/helps/functions/trackdiff/</guid>
+      <description>trackdiff # 使用跟踪微分器对信号进行微分和滤波。 说明 # du = trackdiff(ui,fs,fc) 给定采样率和滤波带宽对信号进行微分。 du = trackdiff(ui,fs,fc,N) 给定采样率、滤波带宽和滤波因数，对信号进行微分</description>
+    </item>
+    
+    <item>
       <title>xplace</title>
       <link>https://iChunyu.github.io/helps/functions/xplace/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>

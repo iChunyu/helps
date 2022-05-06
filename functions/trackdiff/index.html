@@ -3,23 +3,23 @@
 <head>
   <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="description" content="">
+<meta name="description" content="trackdiff # 使用跟踪微分器对信号进行微分和滤波。 说明 # du = trackdiff(ui,fs,fc) 给定采样率和滤波带宽对信号进行微分。 du = trackdiff(ui,fs,fc,N) 给定采样率、滤波带宽和滤波因数，对信号进行微分">
 <meta name="theme-color" content="#FFFFFF">
-<meta name="color-scheme" content="light dark"><meta property="og:title" content="Categories" />
-<meta property="og:description" content="" />
-<meta property="og:type" content="website" />
-<meta property="og:url" content="https://iChunyu.github.io/helps/categories/" />
+<meta name="color-scheme" content="light dark"><meta property="og:title" content="trackdiff" />
+<meta property="og:description" content="trackdiff # 使用跟踪微分器对信号进行微分和滤波。 说明 # du = trackdiff(ui,fs,fc) 给定采样率和滤波带宽对信号进行微分。 du = trackdiff(ui,fs,fc,N) 给定采样率、滤波带宽和滤波因数，对信号进行微分" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://iChunyu.github.io/helps/functions/trackdiff/" /><meta property="article:section" content="Functions" />
 
-<title>Categories | SpringLib</title>
+
+
+<title>trackdiff | SpringLib</title>
 <link rel="manifest" href="/helps/manifest.json">
 <link rel="icon" href="/helps/favicon.png" type="image/x-icon">
-  <link rel="alternate" hreflang="en" href="https://iChunyu.github.io/helps/en/categories/" title="Categories">
 <link rel="stylesheet" href="/helps/book.min.97cfda4f5e3c9fa49a2bf8d401f4ddc0eec576c99cdcf6afbec19173200c37db.css" integrity="sha256-l8/aT148n6SaK/jUAfTdwO7Fdsmc3PavvsGRcyAMN9s=" crossorigin="anonymous">
   <script defer src="/helps/flexsearch.min.js"></script>
   <script defer src="/helps/zh.search.min.4bc79af59c328e3589961927327e12f01210160c4a13966556808b226a707d7c.js" integrity="sha256-S8ea9ZwyjjWJlhknMn4S8BIQFgxKE5ZlVoCLImpwfXw=" crossorigin="anonymous"></script>
 
   <script defer src="/helps/sw.min.f64fb8d201d1f8630596aa9dd14f82281dc1546c8ccca61a6bd182e5854cc09c.js" integrity="sha256-9k&#43;40gHR&#43;GMFlqqd0U&#43;CKB3BVGyMzKYaa9GC5YVMwJw=" crossorigin="anonymous"></script>
-<link rel="alternate" type="application/rss+xml" href="https://iChunyu.github.io/helps/categories/index.xml" title="SpringLib" />
 <!--
 Made with Book Theme
 https://github.com/alex-shpak/hugo-book
@@ -57,8 +57,6 @@ https://github.com/alex-shpak/hugo-book
   
 
 
-  
-
 
 <ul class="book-languages">
   <li>
@@ -73,7 +71,7 @@ https://github.com/alex-shpak/hugo-book
     <ul>
       
       <li>
-        <a href="https://iChunyu.github.io/helps/en/categories/">
+        <a href="https://iChunyu.github.io/helps/en/">
           English
         </a>
       </li>
@@ -197,7 +195,7 @@ https://github.com/alex-shpak/hugo-book
   
 
   
-    <a href="/helps/functions/trackdiff/" class="">trackdiff</a>
+    <a href="/helps/functions/trackdiff/" class=" active">trackdiff</a>
   
 
         </li>
@@ -257,7 +255,7 @@ https://github.com/alex-shpak/hugo-book
     <img src="/helps/svg/menu.svg" class="book-icon" alt="Menu" />
   </label>
 
-  <strong>Categories</strong>
+  <strong>trackdiff</strong>
 
   <label for="toc-control">
     
@@ -270,29 +268,32 @@ https://github.com/alex-shpak/hugo-book
   
   <aside class="hidden clearfix">
     
-  <nav>
+  
+<nav id="TableOfContents">
   <ul>
-  
-    
-    <li class="book-section-flat">
-      <strong>Categories</strong>
+    <li><a href="#font-colordd8452-trackdiff-font"><font color="#DD8452"> trackdiff </font></a>
       <ul>
-      
+        <li><a href="#说明">说明</a></li>
+        <li><a href="#输入">输入</a>
+          <ul>
+            <li><a href="#ui">ui</a></li>
+            <li><a href="#fs">fs</a></li>
+            <li><a href="#fc">fc</a></li>
+            <li><a href="#n">N</a></li>
+          </ul>
+        </li>
+        <li><a href="#输出">输出</a>
+          <ul>
+            <li><a href="#du">du</a></li>
+            <li><a href="#uo">uo</a></li>
+          </ul>
+        </li>
+        <li><a href="#参考资料">参考资料</a></li>
       </ul>
     </li>
-    
-  
-    
-    <li class="book-section-flat">
-      <strong>Tags</strong>
-      <ul>
-      
-      </ul>
-    </li>
-    
-  
   </ul>
 </nav>
+
 
 
   </aside>
@@ -302,9 +303,79 @@ https://github.com/alex-shpak/hugo-book
 
       
       
-  
-
-  
+  <article class="markdown"><h1 id="font-colordd8452-trackdiff-font">
+  <font color="#DD8452"> trackdiff </font>
+  <a class="anchor" href="#font-colordd8452-trackdiff-font">#</a>
+</h1>
+<p>使用跟踪微分器对信号进行微分和滤波。</p>
+<h2 id="说明">
+  说明
+  <a class="anchor" href="#%e8%af%b4%e6%98%8e">#</a>
+</h2>
+<hr>
+<ul>
+<li><code>du = trackdiff(ui,fs,fc)</code> 给定采样率和滤波带宽对信号进行微分。</li>
+<li><code>du = trackdiff(ui,fs,fc,N)</code> 给定采样率、滤波带宽和滤波因数，对信号进行微分。</li>
+<li><code>[du,uo] = trackdiff(ui,fs,fc,N)</code> 对信号进行微分和滤波。</li>
+</ul>
+<h2 id="输入">
+  输入
+  <a class="anchor" href="#%e8%be%93%e5%85%a5">#</a>
+</h2>
+<hr>
+<h3 id="ui">
+  ui
+  <a class="anchor" href="#ui">#</a>
+</h3>
+<p>输入信号，为向量或矩阵。当其为矩阵时，对每一列进行跟踪微分。</p>
+<h3 id="fs">
+  fs
+  <a class="anchor" href="#fs">#</a>
+</h3>
+<p>采样率，标量，单位为 
+<link rel="stylesheet" href="/helps/katex/katex.min.css" />
+<script defer src="/helps/katex/katex.min.js"></script>
+<script defer src="/helps/katex/auto-render.min.js" onload="renderMathInElement(document.body);"></script><span>
+  \(\mathrm{Hz}\)
+</span>
+。</p>
+<h3 id="fc">
+  fc
+  <a class="anchor" href="#fc">#</a>
+</h3>
+<p>滤波截止频率，标量，单位为 <span>
+  \(\mathrm{Hz}\)
+</span>
+。</p>
+<h3 id="n">
+  N
+  <a class="anchor" href="#n">#</a>
+</h3>
+<p>滤波因数，为正整数。其值越大，滤波带宽相应减小。</p>
+<h2 id="输出">
+  输出
+  <a class="anchor" href="#%e8%be%93%e5%87%ba">#</a>
+</h2>
+<hr>
+<h3 id="du">
+  du
+  <a class="anchor" href="#du">#</a>
+</h3>
+<p>输入信号的微分信号，当输入为矩阵时，按列对应。</p>
+<h3 id="uo">
+  uo
+  <a class="anchor" href="#uo">#</a>
+</h3>
+<p>输入信号的滤波信号，当输入为矩阵时，按列对应。</p>
+<h2 id="参考资料">
+  参考资料
+  <a class="anchor" href="#%e5%8f%82%e8%80%83%e8%b5%84%e6%96%99">#</a>
+</h2>
+<hr>
+<ol>
+<li>韩京清, 自抗扰控制技术: 估计补偿不确定因素的控制技术, 国防工业出版社, 2008.</li>
+</ol>
+</article>
  
       
 
@@ -329,6 +400,10 @@ https://github.com/alex-shpak/hugo-book
 
       
   
+  <div class="book-comments">
+
+</div>
+  
  
 
       <label for="menu-control" class="hidden book-menu-overlay"></label>
@@ -338,29 +413,32 @@ https://github.com/alex-shpak/hugo-book
     <aside class="book-toc">
       <div class="book-toc-content">
         
-  <nav>
+  
+<nav id="TableOfContents">
   <ul>
-  
-    
-    <li class="book-section-flat">
-      <strong>Categories</strong>
+    <li><a href="#font-colordd8452-trackdiff-font"><font color="#DD8452"> trackdiff </font></a>
       <ul>
-      
+        <li><a href="#说明">说明</a></li>
+        <li><a href="#输入">输入</a>
+          <ul>
+            <li><a href="#ui">ui</a></li>
+            <li><a href="#fs">fs</a></li>
+            <li><a href="#fc">fc</a></li>
+            <li><a href="#n">N</a></li>
+          </ul>
+        </li>
+        <li><a href="#输出">输出</a>
+          <ul>
+            <li><a href="#du">du</a></li>
+            <li><a href="#uo">uo</a></li>
+          </ul>
+        </li>
+        <li><a href="#参考资料">参考资料</a></li>
       </ul>
     </li>
-    
-  
-    
-    <li class="book-section-flat">
-      <strong>Tags</strong>
-      <ul>
-      
-      </ul>
-    </li>
-    
-  
   </ul>
 </nav>
+
 
  
       </div>
