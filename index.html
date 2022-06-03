@@ -1,14 +1,16 @@
 <!DOCTYPE html>
 <html lang="zh" dir="ltr">
 <head>
-	<meta name="generator" content="Hugo 0.98.0" />
+	<meta name="generator" content="Hugo 0.100.1" />
   <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="description" content="SpringLib 帮助文档  #  嗨，欢迎访问某春雨仿真库的在线帮助文档。
-本库尚处开发阶段，暂不对外开放。如果你已经获得本库的部分函数或模块，欢迎提交错误报告或功能需求。  安装 #  下载后从 MATLAB 进入本库的根目录，在命令行运行以下命令即可:
+<meta name="description" content=" SpringLib 帮助文档 # 嗨，欢迎访问某春雨仿真库的在线帮助文档。
+本库尚处开发阶段，如果你已经获得本库的部分函数或模块，欢迎提交错误报告或功能需求。 安装 # 下载后从 MATLAB 进入本库的根目录，在命令行运行以下命令即可:
 setupLibrary 安装完成后会自动打开 startup.m 文件 (如果没有会自动创建)。取消 %InitPlot 的注释可以使用本仓库提供的默认绘图设置（推荐）。
-卸载 #  从 MATLAB 进入本库的根目录，运行以下命令即可:
-setupLibrary uninstall ">
+卸载 # 从 MATLAB 进入本库的根目录，运行以下命令即可:
+setupLibrary uninstall 手动设置 # 对于已经拿到部分函数的小伙伴可以将其放置在单独的文件夹内，并将该文件夹添加到 MATLAB 搜索路径，相应卸载也只需要将文件夹从搜索路径移除即可。
+点击主页的 Set Path 可以进行设置。若使用代码，从 MATLAB 进入放置程序的文件夹中，运行以下命令即可：
+addpath(pwd); savepath; % 安装 rmpath(pwd); savepath; % 卸载 ">
 <meta name="theme-color" content="#FFFFFF">
 <meta name="color-scheme" content="light dark"><meta property="og:title" content="" />
 <meta property="og:description" content="" />
@@ -21,7 +23,7 @@ setupLibrary uninstall ">
   <link rel="alternate" hreflang="en" href="https://iChunyu.github.io/helps/en/" title="SpringLib">
 <link rel="stylesheet" href="/helps/book.min.97cfda4f5e3c9fa49a2bf8d401f4ddc0eec576c99cdcf6afbec19173200c37db.css" integrity="sha256-l8/aT148n6SaK/jUAfTdwO7Fdsmc3PavvsGRcyAMN9s=" crossorigin="anonymous">
   <script defer src="/helps/flexsearch.min.js"></script>
-  <script defer src="/helps/zh.search.min.4bc79af59c328e3589961927327e12f01210160c4a13966556808b226a707d7c.js" integrity="sha256-S8ea9ZwyjjWJlhknMn4S8BIQFgxKE5ZlVoCLImpwfXw=" crossorigin="anonymous"></script>
+  <script defer src="/helps/zh.search.min.ead57dfae29434a251b76a6d80e7ce48090e1d4f513024b61d589bebd5639d4b.js" integrity="sha256-6tV9&#43;uKUNKJRt2ptgOfOSAkOHU9RMCS2HVib69VjnUs=" crossorigin="anonymous"></script>
 
   <script defer src="/helps/sw.min.f64fb8d201d1f8630596aa9dd14f82281dc1546c8ccca61a6bd182e5854cc09c.js" integrity="sha256-9k&#43;40gHR&#43;GMFlqqd0U&#43;CKB3BVGyMzKYaa9GC5YVMwJw=" crossorigin="anonymous"></script>
 <link rel="alternate" type="application/rss+xml" href="https://iChunyu.github.io/helps/index.xml" title="SpringLib" />
@@ -215,6 +217,19 @@ https://github.com/alex-shpak/hugo-book
   
 
   
+    <a href="/helps/functions/xbode/" class="">xbode</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
     <a href="/helps/functions/xplace/" class="">xplace</a>
   
 
@@ -282,6 +297,7 @@ https://github.com/alex-shpak/hugo-book
       <ul>
         <li><a href="#安装">安装</a></li>
         <li><a href="#卸载">卸载</a></li>
+        <li><a href="#手动设置">手动设置</a></li>
       </ul>
     </li>
   </ul>
@@ -302,7 +318,7 @@ https://github.com/alex-shpak/hugo-book
 </h1>
 <p>嗨，欢迎访问某春雨仿真库的在线帮助文档。</p>
 <blockquote class="book-hint warning">
-  本库尚处开发阶段，暂不对外开放。如果你已经获得本库的部分函数或模块，欢迎提交错误报告或功能需求。
+  本库尚处开发阶段，如果你已经获得本库的部分函数或模块，欢迎提交错误报告或功能需求。
 </blockquote>
 
 <h2 id="安装">
@@ -318,6 +334,14 @@ https://github.com/alex-shpak/hugo-book
 </h2>
 <p>从 MATLAB 进入本库的根目录，运行以下命令即可:</p>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-MATLAB" data-lang="MATLAB"><span style="display:flex;"><span>setupLibrary uninstall
+</span></span></code></pre></div><h2 id="手动设置">
+  手动设置
+  <a class="anchor" href="#%e6%89%8b%e5%8a%a8%e8%ae%be%e7%bd%ae">#</a>
+</h2>
+<p>对于已经拿到部分函数的小伙伴可以将其放置在单独的文件夹内，并将该文件夹添加到 MATLAB 搜索路径，相应卸载也只需要将文件夹从搜索路径移除即可。</p>
+<p>点击主页的 <strong>Set Path</strong> 可以进行设置。若使用代码，从 MATLAB 进入放置程序的文件夹中，运行以下命令即可：</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-MATLAB" data-lang="MATLAB"><span style="display:flex;"><span>addpath(pwd); savepath;     <span style="color:#75715e">% 安装</span>
+</span></span><span style="display:flex;"><span>rmpath(pwd);  savepath;     <span style="color:#75715e">% 卸载</span>
 </span></span></code></pre></div></article>
  
       
@@ -363,6 +387,7 @@ https://github.com/alex-shpak/hugo-book
       <ul>
         <li><a href="#安装">安装</a></li>
         <li><a href="#卸载">卸载</a></li>
+        <li><a href="#手动设置">手动设置</a></li>
       </ul>
     </li>
   </ul>

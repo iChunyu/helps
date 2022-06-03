@@ -69,6 +69,15 @@
     </item>
     
     <item>
+      <title>xbode</title>
+      <link>https://iChunyu.github.io/helps/functions/xbode/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://iChunyu.github.io/helps/functions/xbode/</guid>
+      <description>xbode # 绘制系统的 Bode 图，可指定为幅频响应或相频响应。 说明 # xbode(sys) 使用默认设置绘制系统的幅频响应。 xbode(sys,f,&#39;Type&#39;,&#39;Magnitude&#39;) 指定频率绘制系统的相频响应。 [mag,f] = xbode(sys,f,&#39;ShowBode&#39;,true) 计算幅频响应并输</description>
+    </item>
+    
+    <item>
       <title>xplace</title>
       <link>https://iChunyu.github.io/helps/functions/xplace/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>

@@ -1,0 +1,550 @@
+<!DOCTYPE html>
+<html lang="zh" dir="ltr">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="xbode # 绘制系统的 Bode 图，可指定为幅频响应或相频响应。 说明 # xbode(sys) 使用默认设置绘制系统的幅频响应。 xbode(sys,f,&#39;Type&#39;,&#39;Magnitude&#39;) 指定频率绘制系统的相频响应。 [mag,f] = xbode(sys,f,&#39;ShowBode&#39;,true) 计算幅频响应并输">
+<meta name="theme-color" content="#FFFFFF">
+<meta name="color-scheme" content="light dark"><meta property="og:title" content="xbode" />
+<meta property="og:description" content="xbode # 绘制系统的 Bode 图，可指定为幅频响应或相频响应。 说明 # xbode(sys) 使用默认设置绘制系统的幅频响应。 xbode(sys,f,&#39;Type&#39;,&#39;Magnitude&#39;) 指定频率绘制系统的相频响应。 [mag,f] = xbode(sys,f,&#39;ShowBode&#39;,true) 计算幅频响应并输" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://iChunyu.github.io/helps/functions/xbode/" /><meta property="article:section" content="Functions" />
+
+
+
+<title>xbode | SpringLib</title>
+<link rel="manifest" href="/helps/manifest.json">
+<link rel="icon" href="/helps/favicon.png" type="image/x-icon">
+<link rel="stylesheet" href="/helps/book.min.97cfda4f5e3c9fa49a2bf8d401f4ddc0eec576c99cdcf6afbec19173200c37db.css" integrity="sha256-l8/aT148n6SaK/jUAfTdwO7Fdsmc3PavvsGRcyAMN9s=" crossorigin="anonymous">
+  <script defer src="/helps/flexsearch.min.js"></script>
+  <script defer src="/helps/zh.search.min.ead57dfae29434a251b76a6d80e7ce48090e1d4f513024b61d589bebd5639d4b.js" integrity="sha256-6tV9&#43;uKUNKJRt2ptgOfOSAkOHU9RMCS2HVib69VjnUs=" crossorigin="anonymous"></script>
+
+  <script defer src="/helps/sw.min.f64fb8d201d1f8630596aa9dd14f82281dc1546c8ccca61a6bd182e5854cc09c.js" integrity="sha256-9k&#43;40gHR&#43;GMFlqqd0U&#43;CKB3BVGyMzKYaa9GC5YVMwJw=" crossorigin="anonymous"></script>
+<!--
+Made with Book Theme
+https://github.com/alex-shpak/hugo-book
+-->
+  
+</head>
+<body dir="ltr">
+  <input type="checkbox" class="hidden toggle" id="menu-control" />
+  <input type="checkbox" class="hidden toggle" id="toc-control" />
+  <main class="container flex">
+    <aside class="book-menu">
+      <div class="book-menu-content">
+        
+  <nav>
+<h2 class="book-brand">
+  <a class="flex align-center" href="/helps/"><span>SpringLib</span>
+  </a>
+</h2>
+
+
+<div class="book-search">
+  <input type="text" id="book-search-input" placeholder="搜索" aria-label="搜索" maxlength="64" data-hotkeys="s/" />
+  <div class="book-search-spinner hidden"></div>
+  <ul id="book-search-results"></ul>
+</div>
+
+
+
+  
+
+
+
+  
+    
+  
+
+
+
+<ul class="book-languages">
+  <li>
+    <input type="checkbox" id="languages" class="toggle" />
+    <label for="languages" class="flex justify-between">
+      <a role="button" class="flex align-center">
+        <img src="/helps/svg/translate.svg" class="book-icon" alt="Languages" />
+        简体中文
+      </a>
+    </label>
+
+    <ul>
+      
+      <li>
+        <a href="https://iChunyu.github.io/helps/en/">
+          English
+        </a>
+      </li>
+      
+    </ul>
+  </li>
+</ul>
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+  
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <span>好用的函数</span>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/helps/functions/findminpsd/" class="">findMinPSD</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/helps/functions/gennoise/" class="">genNoise</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/helps/functions/getcurrentpsd/" class="">getCurrentPSD</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/helps/functions/ilpsd/" class="">iLPSD</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/helps/functions/initplot/" class="">InitPlot</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/helps/functions/spcolor/" class="">spcolor</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/helps/functions/trackdiff/" class="">trackdiff</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/helps/functions/xbode/" class=" active">xbode</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/helps/functions/xplace/" class="">xplace</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+  </ul>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</nav>
+
+
+
+
+  <script>(function(){var e=document.querySelector("aside .book-menu-content");addEventListener("beforeunload",function(){localStorage.setItem("menu.scrollTop",e.scrollTop)}),e.scrollTop=localStorage.getItem("menu.scrollTop")})()</script>
+
+
+ 
+      </div>
+    </aside>
+
+    <div class="book-page">
+      <header class="book-header">
+        
+  <div class="flex align-center justify-between">
+  <label for="menu-control">
+    <img src="/helps/svg/menu.svg" class="book-icon" alt="Menu" />
+  </label>
+
+  <strong>xbode</strong>
+
+  <label for="toc-control">
+    
+    <img src="/helps/svg/toc.svg" class="book-icon" alt="Table of Contents" />
+    
+  </label>
+</div>
+
+
+  
+  <aside class="hidden clearfix">
+    
+  
+<nav id="TableOfContents">
+  <ul>
+    <li><a href="#font-colordd8452-xbode-font"><font color="#DD8452"> xbode </font></a>
+      <ul>
+        <li><a href="#说明">说明</a></li>
+        <li><a href="#输入">输入</a>
+          <ul>
+            <li><a href="#sys">sys</a></li>
+            <li><a href="#f">f</a></li>
+          </ul>
+        </li>
+        <li><a href="#输出">输出</a>
+          <ul>
+            <li><a href="#mag">mag</a></li>
+            <li><a href="#phase">phase</a></li>
+            <li><a href="#f-1">f</a></li>
+          </ul>
+        </li>
+        <li><a href="#参数">参数</a>
+          <ul>
+            <li><a href="#showbode">ShowBode</a></li>
+            <li><a href="#type">Type</a></li>
+            <li><a href="#treatas">TreatAs</a></li>
+            <li><a href="#绘图控制">绘图控制</a></li>
+          </ul>
+        </li>
+        <li><a href="#使用示例">使用示例</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+
+
+
+  </aside>
+  
+ 
+      </header>
+
+      
+      
+  <article class="markdown"><h1 id="font-colordd8452-xbode-font">
+  <font color="#DD8452"> xbode </font>
+  <a class="anchor" href="#font-colordd8452-xbode-font">#</a>
+</h1>
+<p>绘制系统的 Bode 图，可指定为幅频响应或相频响应。</p>
+<h2 id="说明">
+  说明
+  <a class="anchor" href="#%e8%af%b4%e6%98%8e">#</a>
+</h2>
+<hr>
+<ul>
+<li><code>xbode(sys)</code> 使用默认设置绘制系统的幅频响应。</li>
+<li><code>xbode(sys,f,'Type','Magnitude')</code> 指定频率绘制系统的相频响应。</li>
+<li><code>[mag,f] = xbode(sys,f,'ShowBode',true)</code> 计算幅频响应并输出，并将结果绘图。</li>
+<li><code>[mag,phase,f] = xbode(sys,_)</code> 计算系统的频率响应并输出，可使用参数进行设置。</li>
+</ul>
+<h2 id="输入">
+  输入
+  <a class="anchor" href="#%e8%be%93%e5%85%a5">#</a>
+</h2>
+<hr>
+<h3 id="sys">
+  sys
+  <a class="anchor" href="#sys">#</a>
+</h3>
+<p>待分析的系统，可以使用传递函数、状态空间、传递函数矩阵等；支持连续时间系统和离散时间系统。</p>
+<blockquote class="book-hint info">
+  如果指定了系统输入、输出名称（例如使用 <code>getIOTransfer</code> 获得的状态方程会自带 <code>InputName</code> 和 <code>OutputName</code> 属性），在构造向量、矩阵时应当遵守 MIMO 系统的规则以避免出现警告。例如单输入多输出应当构造为列向量、多输入单输出应当构造为行向量。
+</blockquote>
+
+<h3 id="f">
+  f
+  <a class="anchor" href="#f">#</a>
+</h3>
+<p>可选参数，用于控制 Bode 图的频率范围，默认单位为 
+<link rel="stylesheet" href="/helps/katex/katex.min.css" />
+<script defer src="/helps/katex/katex.min.js"></script>
+<script defer src="/helps/katex/auto-render.min.js" onload="renderMathInElement(document.body);"></script><span>
+  \(\mathrm{Hz}\)
+</span>
+，允许以下情形：</p>
+<ul>
+<li>留空：此时将由 <code>bode</code> 函数控制频率范围和计算的频率点数量；</li>
+<li>标量：当系统为离散系统时允许传入标量，此时对应绘图频率下限频率的对数，即 <span>
+  \(\log_{10} f_\mathrm{min}\)
+</span>
+。如此做，频率上限默认为 Nyquist 频率 <span>
+  \(f_\mathrm{max} = f_s/2\)
+</span>
+，频率点数为 <span>
+  \(100\)
+</span>
+；</li>
+<li>长度为 <span>
+  \(2\)
+</span>
+ 的向量：分别对应最小、最大频率的对数，即 <span>
+  \([\,\log_{10}f_\mathrm{min},\, \log_{10}f_\mathrm{max}\,]\)
+</span>
+，默认频率点数为 <span>
+  \(100\)
+</span>
+。对于离散系统，程序会判断设置的最大频率并将其约束在 Nyquist 频率以内；</li>
+<li>长度大于 <span>
+  \(2\)
+</span>
+ 的向量：手动指定计算的频率点。对于离散系统，程序会判断设置的最大频率并将其约束在 Nyquist 频率以内。</li>
+</ul>
+<h2 id="输出">
+  输出
+  <a class="anchor" href="#%e8%be%93%e5%87%ba">#</a>
+</h2>
+<hr>
+<h3 id="mag">
+  mag
+  <a class="anchor" href="#mag">#</a>
+</h3>
+<p>幅度响应，根据传入系统的尺寸不同，将有以下两种输出：</p>
+<ul>
+<li>输入为系统向量：输出为矩阵，各列对应各子系统的频率响应；</li>
+<li>输入为系统矩阵：输出为三维数组，前两个维度与输入矩阵对应（行列分别对应输出、输入），第三个维度为频率响应。</li>
+</ul>
+<h3 id="phase">
+  phase
+  <a class="anchor" href="#phase">#</a>
+</h3>
+<p>相位响应，输出形式同幅度响应规则。</p>
+<h3 id="f-1">
+  f
+  <a class="anchor" href="#f-1">#</a>
+</h3>
+<p>幅频响应和相频响应对应的频率点。</p>
+<h2 id="参数">
+  参数
+  <a class="anchor" href="#%e5%8f%82%e6%95%b0">#</a>
+</h2>
+<hr>
+<h3 id="showbode">
+  ShowBode
+  <a class="anchor" href="#showbode">#</a>
+</h3>
+<p>是否绘制 Bode 图，为逻辑值。当函数没有输出时默认为 <code>true</code>，否则默认为 <code>false</code>。</p>
+<h3 id="type">
+  Type
+  <a class="anchor" href="#type">#</a>
+</h3>
+<p>Bode 绘图选择，可选值为 <code>'Magnitude'</code> 或 <code>'Phase'</code>，分别对应绘制幅频响应和相频响应。默认值为 <code>'Magnitude'</code> 。</p>
+<h3 id="treatas">
+  TreatAs
+  <a class="anchor" href="#treatas">#</a>
+</h3>
+<p>绘图选项，可选值为 <code>'SISO'</code> 或 <code>'MIMO'</code>。当输入系统向量时，<code>'SISO'</code> 将所有的频率响应绘制在一个坐标系以便对比，<code>'MIMO'</code> 将各系统的响应绘制在多个坐标系中，子图的形状与系统向量的形状一致。该选项默认值为 <code>'SISO'</code>，但当输入系统矩阵时，将强制为 <code>'MIMO'</code>。</p>
+<h3 id="绘图控制">
+  绘图控制
+  <a class="anchor" href="#%e7%bb%98%e5%9b%be%e6%8e%a7%e5%88%b6">#</a>
+</h3>
+<p>本程序支持使用键值对进行绘图控制，如 <code>'LineWidth',2</code>。应当注意的是：当传入系统向量或矩阵时，该选项会对所有绘图生效。因此建议只在绘制单个系统的响应时使用该功能。</p>
+<h2 id="使用示例">
+  使用示例
+  <a class="anchor" href="#%e4%bd%bf%e7%94%a8%e7%a4%ba%e4%be%8b">#</a>
+</h2>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-matlab" data-lang="matlab"><span style="display:flex;"><span>sys1 = tf(<span style="color:#ae81ff">2</span><span style="color:#f92672">*</span>pi,[<span style="color:#ae81ff">1</span> <span style="color:#ae81ff">2</span><span style="color:#f92672">*</span>pi]);
+</span></span><span style="display:flex;"><span>sys2 = tf(<span style="color:#ae81ff">20</span><span style="color:#f92672">*</span>pi,[<span style="color:#ae81ff">1</span> <span style="color:#ae81ff">20</span><span style="color:#f92672">*</span>pi]);
+</span></span><span style="display:flex;"><span>f = [<span style="color:#f92672">-</span><span style="color:#ae81ff">2</span> <span style="color:#ae81ff">3</span>];
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>figure
+</span></span><span style="display:flex;"><span>xbode(sys1,f)
+</span></span><span style="display:flex;"><span>hold on
+</span></span><span style="display:flex;"><span>xbode(sys2,f,<span style="color:#e6db74">&#39;LineStyle&#39;</span>,<span style="color:#e6db74">&#39;--&#39;</span>)
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>figure
+</span></span><span style="display:flex;"><span>xbode([sys1;sys2],f,<span style="color:#e6db74">&#39;TreatAs&#39;</span>,<span style="color:#e6db74">&#39;MIMO&#39;</span>)
+</span></span></code></pre></div></article>
+ 
+      
+
+      <footer class="book-footer">
+        
+  <div class="flex flex-wrap justify-between">
+
+
+
+
+
+</div>
+
+
+
+  <script>(function(){function e(n){const e=window.getSelection(),t=document.createRange();t.selectNodeContents(n),e.removeAllRanges(),e.addRange(t)}document.querySelectorAll("pre code").forEach(t=>{t.addEventListener("click",function(){e(t.parentElement),navigator.clipboard&&navigator.clipboard.writeText(t.parentElement.textContent)})})})()</script>
+
+
+ 
+        
+      </footer>
+
+      
+  
+  <div class="book-comments">
+
+</div>
+  
+ 
+
+      <label for="menu-control" class="hidden book-menu-overlay"></label>
+    </div>
+
+    
+    <aside class="book-toc">
+      <div class="book-toc-content">
+        
+  
+<nav id="TableOfContents">
+  <ul>
+    <li><a href="#font-colordd8452-xbode-font"><font color="#DD8452"> xbode </font></a>
+      <ul>
+        <li><a href="#说明">说明</a></li>
+        <li><a href="#输入">输入</a>
+          <ul>
+            <li><a href="#sys">sys</a></li>
+            <li><a href="#f">f</a></li>
+          </ul>
+        </li>
+        <li><a href="#输出">输出</a>
+          <ul>
+            <li><a href="#mag">mag</a></li>
+            <li><a href="#phase">phase</a></li>
+            <li><a href="#f-1">f</a></li>
+          </ul>
+        </li>
+        <li><a href="#参数">参数</a>
+          <ul>
+            <li><a href="#showbode">ShowBode</a></li>
+            <li><a href="#type">Type</a></li>
+            <li><a href="#treatas">TreatAs</a></li>
+            <li><a href="#绘图控制">绘图控制</a></li>
+          </ul>
+        </li>
+        <li><a href="#使用示例">使用示例</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+
+
+ 
+      </div>
+    </aside>
+    
+  </main>
+
+  
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
