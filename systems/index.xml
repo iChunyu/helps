@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>系统模型 on SpringLib</title>
+    <link>https://iChunyu.github.io/helps/systems/</link>
+    <description>Recent content in 系统模型 on SpringLib</description>
+    <generator>Hugo -- gohugo.io</generator><atom:link href="https://iChunyu.github.io/helps/systems/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>航天器动力学</title>
+      <link>https://iChunyu.github.io/helps/systems/spacecraftdynamics/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://iChunyu.github.io/helps/systems/spacecraftdynamics/</guid>
+      <description>航天器动力学 # 航天器轨道动力学和姿态动力学模型。 输入 # \(\mathbf{g}_s^i\) ：航天器受到的引力加速度； \(\mathbf{F}_{s,\mathrm{ng}}^s\) ：航天器受到的的非保守力； \(\mathbf{M}_s^s\) ：航天器受到的力矩。 输出 # \(\mathbf{r}_{is}^i\)</description>
+    </item>
+    
+  </channel>
+</rss>

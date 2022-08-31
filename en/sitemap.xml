@@ -15,6 +15,7 @@
                 />
   </url><url>
     <loc>https://iChunyu.github.io/helps/en/functions/</loc>
+    <lastmod>2022-08-31T16:11:52+08:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="zh"
@@ -27,6 +28,7 @@
                 />
   </url><url>
     <loc>https://iChunyu.github.io/helps/en/</loc>
+    <lastmod>2022-08-31T16:11:52+08:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="zh"
@@ -36,6 +38,19 @@
                 rel="alternate"
                 hreflang="en"
                 href="https://iChunyu.github.io/helps/en/"
+                />
+  </url><url>
+    <loc>https://iChunyu.github.io/helps/en/systems/</loc>
+    <lastmod>2022-08-31T16:11:52+08:00</lastmod>
+    <xhtml:link
+                rel="alternate"
+                hreflang="zh"
+                href="https://iChunyu.github.io/helps/systems/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="https://iChunyu.github.io/helps/en/systems/"
                 />
   </url><url>
     <loc>https://iChunyu.github.io/helps/en/tags/</loc>

@@ -3,16 +3,16 @@
 <head>
   <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="description" content="getCurrentPSD # 获取当前图窗内数据的功率谱密度。 本程序依赖于 iLPSD 说明 # getCurrentPSD(fs) 计算当前图窗内数据的功率谱密度，并在新的图窗中绘制结果。 getCurrentPSD(fs,Name,Value) 根据键值对参数控制 iLPSD 算法">
+<meta name="description" content="航天器动力学 # 航天器轨道动力学和姿态动力学模型。 输入 # \(\mathbf{g}_s^i\) ：航天器受到的引力加速度； \(\mathbf{F}_{s,\mathrm{ng}}^s\) ：航天器受到的的非保守力； \(\mathbf{M}_s^s\) ：航天器受到的力矩。 输出 # \(\mathbf{r}_{is}^i\)">
 <meta name="theme-color" content="#FFFFFF">
-<meta name="color-scheme" content="light dark"><meta property="og:title" content="getCurrentPSD" />
-<meta property="og:description" content="getCurrentPSD # 获取当前图窗内数据的功率谱密度。 本程序依赖于 iLPSD 说明 # getCurrentPSD(fs) 计算当前图窗内数据的功率谱密度，并在新的图窗中绘制结果。 getCurrentPSD(fs,Name,Value) 根据键值对参数控制 iLPSD 算法" />
+<meta name="color-scheme" content="light dark"><meta property="og:title" content="航天器动力学" />
+<meta property="og:description" content="航天器动力学 # 航天器轨道动力学和姿态动力学模型。 输入 # \(\mathbf{g}_s^i\) ：航天器受到的引力加速度； \(\mathbf{F}_{s,\mathrm{ng}}^s\) ：航天器受到的的非保守力； \(\mathbf{M}_s^s\) ：航天器受到的力矩。 输出 # \(\mathbf{r}_{is}^i\)" />
 <meta property="og:type" content="article" />
-<meta property="og:url" content="https://iChunyu.github.io/helps/functions/getcurrentpsd/" /><meta property="article:section" content="functions" />
+<meta property="og:url" content="https://iChunyu.github.io/helps/systems/spacecraftdynamics/" /><meta property="article:section" content="systems" />
 
 <meta property="article:modified_time" content="2022-08-31T16:11:52+08:00" />
 
-<title>getCurrentPSD | SpringLib</title>
+<title>航天器动力学 | SpringLib</title>
 <link rel="manifest" href="/helps/manifest.json">
 <link rel="icon" href="/helps/favicon.png" type="image/x-icon">
 <link rel="stylesheet" href="/helps/book.min.a82d7e77ceb134d151c4d7e381eeb30623fbd5a524d58c584d8716ecec0205bd.css" integrity="sha256-qC1&#43;d86xNNFRxNfjge6zBiP71aUk1YxYTYcW7OwCBb0=" crossorigin="anonymous">
@@ -143,7 +143,7 @@ https://github.com/alex-shpak/hugo-book
   
 
   
-    <a href="/helps/functions/getcurrentpsd/" class="active">getCurrentPSD</a>
+    <a href="/helps/functions/getcurrentpsd/" class="">getCurrentPSD</a>
   
 
         </li>
@@ -252,7 +252,7 @@ https://github.com/alex-shpak/hugo-book
   
 
   
-    <a href="/helps/systems/spacecraftdynamics/" class="">航天器动力学</a>
+    <a href="/helps/systems/spacecraftdynamics/" class="active">航天器动力学</a>
   
 
         </li>
@@ -299,7 +299,7 @@ https://github.com/alex-shpak/hugo-book
     <img src="/helps/svg/menu.svg" class="book-icon" alt="Menu" />
   </label>
 
-  <strong>getCurrentPSD</strong>
+  <strong>航天器动力学</strong>
 
   <label for="toc-control">
     
@@ -315,25 +315,11 @@ https://github.com/alex-shpak/hugo-book
   
 <nav id="TableOfContents">
   <ul>
-    <li><a href="#font-colordd8452-getcurrentpsd-font"><font color="#DD8452"> getCurrentPSD </font></a>
+    <li><a href="#font-colordd8452-航天器动力学-font"><font color="#DD8452"> 航天器动力学 </font></a>
       <ul>
-        <li><a href="#说明">说明</a></li>
-        <li><a href="#输入">输入</a>
-          <ul>
-            <li><a href="#fs">fs</a></li>
-          </ul>
-        </li>
-        <li><a href="#参数">参数</a>
-          <ul>
-            <li><a href="#jdes">Jdes</a></li>
-            <li><a href="#kdes">Kdes</a></li>
-            <li><a href="#xi">xi</a></li>
-            <li><a href="#window">window</a></li>
-            <li><a href="#parallel">parallel</a></li>
-            <li><a href="#type">type</a></li>
-            <li><a href="#绘图控制">绘图控制</a></li>
-          </ul>
-        </li>
+        <li><a href="#输入">输入</a></li>
+        <li><a href="#输出">输出</a></li>
+        <li><a href="#参数">参数</a></li>
       </ul>
     </li>
   </ul>
@@ -348,87 +334,95 @@ https://github.com/alex-shpak/hugo-book
 
       
       
-  <article class="markdown"><h1 id="font-colordd8452-getcurrentpsd-font">
-  <font color="#DD8452"> getCurrentPSD </font>
-  <a class="anchor" href="#font-colordd8452-getcurrentpsd-font">#</a>
+  <article class="markdown"><h1 id="font-colordd8452-航天器动力学-font">
+  <font color="#DD8452"> 航天器动力学 </font>
+  <a class="anchor" href="#font-colordd8452-%e8%88%aa%e5%a4%a9%e5%99%a8%e5%8a%a8%e5%8a%9b%e5%ad%a6-font">#</a>
 </h1>
-<p>获取当前图窗内数据的功率谱密度。</p>
-<blockquote class="book-hint info">
-  本程序依赖于 
-  <a href="https://iChunyu.github.io/helps/functions/ilpsd/"><code>iLPSD</code></a>
-</blockquote>
+<div class="book-columns flex flex-wrap">
 
-<h2 id="说明">
-  说明
-  <a class="anchor" href="#%e8%af%b4%e6%98%8e">#</a>
-</h2>
-<hr>
-<p><code>getCurrentPSD(fs)</code> 计算当前图窗内数据的功率谱密度，并在新的图窗中绘制结果。
-<code>getCurrentPSD(fs,Name,Value)</code> 根据键值对参数控制 <code>iLPSD</code> 算法以及绘图选项。</p>
+  <div class="flex-even markdown-inner">
+    航天器轨道动力学和姿态动力学模型。
+  </div>
+
+  <div class="flex-even markdown-inner">
+    <div align=right>
+    <img src=overview.png width=40% />
+</div>
+
+  </div>
+
+</div>
+
 <h2 id="输入">
   输入
   <a class="anchor" href="#%e8%be%93%e5%85%a5">#</a>
 </h2>
 <hr>
-<h3 id="fs">
-  fs
-  <a class="anchor" href="#fs">#</a>
-</h3>
-<p>采样率，为标量，单位为 
+<ul>
+<li>
 <link rel="stylesheet" href="/helps/katex/katex.min.css" />
 <script defer src="/helps/katex/katex.min.js"></script>
 <script defer src="/helps/katex/auto-render.min.js" onload="renderMathInElement(document.body);"></script><span>
-  \(\mathrm{Hz}\)
+  \(\mathbf{g}_s^i\)
 </span>
-。</p>
+：航天器受到的引力加速度；</li>
+<li><span>
+  \(\mathbf{F}_{s,\mathrm{ng}}^s\)
+</span>
+：航天器受到的的非保守力；</li>
+<li><span>
+  \(\mathbf{M}_s^s\)
+</span>
+：航天器受到的力矩。</li>
+</ul>
+<h2 id="输出">
+  输出
+  <a class="anchor" href="#%e8%be%93%e5%87%ba">#</a>
+</h2>
+<hr>
+<ul>
+<li><span>
+  \(\mathbf{r}_{is}^i\)
+</span>
+：航天器在惯性系下的位置；</li>
+<li><span>
+  \(\mathbf{v}_{is}^i\)
+</span>
+：航天器在惯性系下的速度；</li>
+<li><span>
+  \(\mathbf{a}_{s,\mathrm{ng}}^s\)
+</span>
+：非保守力引起的加速度；</li>
+<li><span>
+  \(\mathfrak{q}_s^i\)
+</span>
+：航天器的姿态四元数；</li>
+<li><span>
+  \(\bm{\omega}_{is}^s\)
+</span>
+：航天器角速度；</li>
+<li><span>
+  \(\dot{\bm{\omega}}_{is}^s\)
+</span>
+：航天器角加速度。</li>
+</ul>
+<p>说明：姿态四元数采用 <span>
+  \(\mathfrak{q} = [q_0,\, q_1,\, q_2,\, q_3]\)
+</span>
+ 形式。</p>
 <h2 id="参数">
   参数
   <a class="anchor" href="#%e5%8f%82%e6%95%b0">#</a>
 </h2>
 <hr>
-<p>本程序将参数传递给 
-  <a href="https://iChunyu.github.io/helps/functions/ilpsd/"><code>iLPSD</code></a>，包括以下可选参数。</p>
-<h3 id="jdes">
-  Jdes
-  <a class="anchor" href="#jdes">#</a>
-</h3>
-<p>期望的频率点数，为整数，默认值为 <code>1000</code>。</p>
-<h3 id="kdes">
-  Kdes
-  <a class="anchor" href="#kdes">#</a>
-</h3>
-<p>期望的分段次数，为整数，默认值为 <code>100</code>。</p>
-<h3 id="xi">
-  xi
-  <a class="anchor" href="#xi">#</a>
-</h3>
-<p>数据分段时的重叠率，为 0~1 之间的小数，默认值为 <code>0.5</code>。</p>
-<h3 id="window">
-  window
-  <a class="anchor" href="#window">#</a>
-</h3>
-<p>窗函数，为函数句柄，默认值为 <code>@hann</code>。支持自定义窗函数，但应当确保所定义的窗函数仅接受一个参数，即窗函数的长度（为整数）。</p>
-<h3 id="parallel">
-  parallel
-  <a class="anchor" href="#parallel">#</a>
-</h3>
-<p>是否使用并行计算，为逻辑变量，默认为 <code>false</code>。</p>
-<h3 id="type">
-  type
-  <a class="anchor" href="#type">#</a>
-</h3>
-<p>计算的谱类型，为字符变量，可选值有：</p>
 <ul>
-<li><code>’PSD'</code>: 默认值，计算功率谱密度；</li>
-<li><code>'RMS'</code>：计算有效值（标准差）；</li>
-<li><code>'Amp'</code>：计算幅度谱。</li>
+<li><code>Ms</code>：航天器的质量；</li>
+<li><code>Js</code>：航天器的转动惯量矩阵；</li>
+<li><code>r0_is_i</code>：航天器的初始位置；</li>
+<li><code>v0_is_i</code>：航天器的初始速度；</li>
+<li><code>omg0_is_s</code>：航天器的初始角速度；</li>
+<li><code>q0_s_i</code>：航天器的初始姿态四元数。</li>
 </ul>
-<h3 id="绘图控制">
-  绘图控制
-  <a class="anchor" href="#%e7%bb%98%e5%9b%be%e6%8e%a7%e5%88%b6">#</a>
-</h3>
-<p>本程序接受绘图控制的键值对，如 <code>'LineWidth',2</code>。更多绘图控制可以参考 
-  <a href="https://ww2.mathworks.cn/help/matlab/ref/plot.html?lang=en">Plot 帮助文档</a>。</p>
 </article>
  
       
@@ -476,25 +470,11 @@ https://github.com/alex-shpak/hugo-book
   
 <nav id="TableOfContents">
   <ul>
-    <li><a href="#font-colordd8452-getcurrentpsd-font"><font color="#DD8452"> getCurrentPSD </font></a>
+    <li><a href="#font-colordd8452-航天器动力学-font"><font color="#DD8452"> 航天器动力学 </font></a>
       <ul>
-        <li><a href="#说明">说明</a></li>
-        <li><a href="#输入">输入</a>
-          <ul>
-            <li><a href="#fs">fs</a></li>
-          </ul>
-        </li>
-        <li><a href="#参数">参数</a>
-          <ul>
-            <li><a href="#jdes">Jdes</a></li>
-            <li><a href="#kdes">Kdes</a></li>
-            <li><a href="#xi">xi</a></li>
-            <li><a href="#window">window</a></li>
-            <li><a href="#parallel">parallel</a></li>
-            <li><a href="#type">type</a></li>
-            <li><a href="#绘图控制">绘图控制</a></li>
-          </ul>
-        </li>
+        <li><a href="#输入">输入</a></li>
+        <li><a href="#输出">输出</a></li>
+        <li><a href="#参数">参数</a></li>
       </ul>
     </li>
   </ul>
