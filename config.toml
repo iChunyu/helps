@@ -4,7 +4,7 @@ theme = 'hugo-book'
 
 # Book configuration
 disablePathToLower = false
-enableGitInfo = false
+enableGitInfo = true
 
 defaultContentLanguage = "zh"
 hasCJKLanguage = true
