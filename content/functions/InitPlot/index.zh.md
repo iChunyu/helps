@@ -14,7 +14,7 @@ title: "InitPlot"
 ---
 
 - `InitPlot` 使用默认值值初始化绘图设置。
-- `InitPlot(LineWidth,FontSize,WindowStyle,Interperter)` 根据指定值初始化绘图设置。
+- `InitPlot(LineWidth,FontSize,WindowStyle,Interperter,Style)` 根据指定值初始化绘图设置。
 - `InitPlot('remove')` 移除自定义设置，恢复 MATLAB 默认值。
 
 ## 输入
@@ -39,6 +39,10 @@ title: "InitPlot"
 {{< hint info >}}
 本程序将 `'latex'` 设置为默认解释器，在使用 `xlabel` 等进行文字标注时，若设计数学符号，必须使用 `$` 进行标注。如 `ylabel('$V_\mathrm{fed}\,\mathrm{[V/\sqrt{Hz}]}$')`。
 {{< /hint >}}
+
+### Style
+
+配色样式，默认为 `hybrid`，其他可选项有：`matplotlib`、`seaborn`、`seaborn2`。各个配色方案可以通过命令如 `spcolor('ShowColors','hybrid')` 进行查看。
 
 ## 使用示例
 
