@@ -47,7 +47,7 @@
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://iChunyu.github.io/helps/functions/initplot/</guid>
-      <description>InitPlot # 初始化绘图设置。 本程序依赖于 spcolor 说明 # InitPlot 使用默认值值初始化绘图设置。 InitPlot(LineWidth,FontSize,WindowStyle,Interperter) 根据指定值初始化绘图设置。 InitPlot(&#39;remove&#39;) 移除自定义设置，恢复 MATLAB 默认值。 输入 # LindWidth #</description>
+      <description>InitPlot # 初始化绘图设置。 本程序依赖于 spcolor 说明 # InitPlot 使用默认值值初始化绘图设置。 InitPlot(LineWidth,FontSize,WindowStyle,Interperter,Style) 根据指定值初始化绘图设置。 InitPlot(&#39;remove&#39;) 移除自定义设置，恢复 MATLAB 默认值。 输入 # LindWidth #</description>
     </item>
     
     <item>
