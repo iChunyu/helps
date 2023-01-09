@@ -34,4 +34,3 @@ setupLibrary uninstall
 addpath(pwd); savepath;     % 安装
 rmpath(pwd);  savepath;     % 卸载
 ```
-

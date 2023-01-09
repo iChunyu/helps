@@ -15,7 +15,7 @@ title: "genNoise"
 
 - `genNoise(ASD,fs)` 根据给定谱密度和采样率构造噪声数据，并绘制其功率谱密度与目标曲线对比。
 - `x = genNoise(ASD,fs,N)` 根据给定的谱密度、采样率和点数生成噪声数据。
-- `x = genNoise(ASD,fs,N,plt)` 生成给定噪声数据并手动控制是否绘图验证。
+- `x = genNoise(ASD,fs,N,seed,plt)` 生成给定噪声数据并手动控制是否绘图验证。
 
 ## 输入
 ---
@@ -31,6 +31,10 @@ title: "genNoise"
 ### N
 
 噪声数据点数，为标量，默认值为 `1024`。
+
+### seed
+
+产生噪声所用的随机数种子，为整数，默认为 `0`。
 
 ### plt
 
@@ -51,4 +55,3 @@ fs = 10;
 N = 1e4;
 x = genNoise(ASD,fs,N,true);
 ```
-

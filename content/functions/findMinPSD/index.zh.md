@@ -71,3 +71,14 @@ title: "findMinPSD"
 
 是否绘制扫描功率谱的时频曲面，为逻辑变量，默认值为 `true`。
 
+### costfcn
+
+自定义代价函数，为函数句柄。当不指定该参数时，默认使用给定频带内积分最小作为最优功率谱的判断依据，即：
+
+```matlab
+costfcn = @(pxx,f) trapz(f(f>=fint(1)&f<=fint(2)),pxx(f>=fint(1)&f<=fint(2)));
+```
+
+### figtype
+
+输出图片的形式，可选项有 `'TimeFrequency'`（绘制时频响应热图）、`'PSD'`（绘制最优功率谱密度曲线，默认）、`'Both'`（时频响应和最优功率谱密度都画）。

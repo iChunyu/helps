@@ -12,7 +12,7 @@ title: "spcolor"
 - `spcolor` 输出当前配色方案的颜色名字及其归一化 RGB 值。
 - `cVec = spcolor(num)` 根据数字索引输出对应颜色的 RGB 值。
 - `cVec = spcolor(str)` 根据名称索引输出对应颜色的 RGB 值。
-- `spcolor('ShowColors')` 绘图展示当前配色方案。
+- `spcolor('ShowColors')` 绘图展示所有配色方案。
 - `spcolor(hfig)` 将配色方案应用到指定的绘图中。
 - `spcolor(_,style)` 指定配色方案。
 
@@ -39,11 +39,8 @@ title: "spcolor"
 
 ### style
 
-配色样式，默认为 `hybrid`，其他可选项有：`matplotlib`、`seaborn`、`seaborn2`。各个配色方案可以通过命令如 `spcolor('ShowColors','hybrid')` 进行查看。
+配色样式，默认为 `hybrid`，其他可选项有：`matplotlib`、`seaborn`、`seaborn2`。各个配色方案可以通过命令如 `spcolor('ShowColors')` 进行查看。
 
-{{< hint info >}}
-使用 `spcolor` 指定配色样式后，在重启 MATLAB 或重新调用其他样式之前都会保留上一次指定的样式。
-{{< /hint >}}
 
 ## 使用示例
 
