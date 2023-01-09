@@ -83,7 +83,7 @@
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://iChunyu.github.io/helps/functions/xplace/</guid>
-      <description>xplace # 使用符号计算实现离散闭环系统的极点配置。 说明 # Para = xplace(A,p1,p2,T) 根据闭环系统的状态矩阵进行极点配置，并返回设计参数。 [Para,Aout] = xplace(A,p1,p2,T,Name,Value) 根据键值对参数设置进行极点</description>
+      <description>xplace # 使用符号计算实现离散闭环系统的极点配置。 说明 # Para = xplace(A,p,T) 根据闭环系统的状态矩阵进行极点配置，并返回设计参数。 [Para,Aout] = xplace(A,p,T,Name,Value) 根据键值对参数设置进行极点</description>
     </item>
     
   </channel>
