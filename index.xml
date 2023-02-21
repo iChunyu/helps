@@ -42,6 +42,15 @@
     </item>
     
     <item>
+      <title>getStairs</title>
+      <link>https://iChunyu.github.io/helps/functions/getstairs/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://iChunyu.github.io/helps/functions/getstairs/</guid>
+      <description>getStairs # 求取阶梯信号平坦段内的平均值。 说明 # [ym,yd] = getStairs(y) 搜寻台阶信号的平坦段返回平坦段数据的平均值和标准差。 ym = getStairs(y,&#39;x&#39;,x) 求取台阶信号平坦段数据的平均值，并根</description>
+    </item>
+    
+    <item>
       <title>iLPSD</title>
       <link>https://iChunyu.github.io/helps/functions/ilpsd/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>

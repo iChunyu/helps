@@ -3,15 +3,15 @@
 <head>
   <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="description" content="autoCaliXY # 求取阶梯信号平坦段内的平均值，并根据给定的函数模型进行拟合。 说明 # autoCaliXY(x,y) 使用默认设置对阶梯形式的数据进行线性拟合。 [xm,ym] = autoCaliXY(x,y) 使用默认设置对阶梯形">
+<meta name="description" content="getStairs # 求取阶梯信号平坦段内的平均值。 说明 # [ym,yd] = getStairs(y) 搜寻台阶信号的平坦段返回平坦段数据的平均值和标准差。 ym = getStairs(y,&#39;x&#39;,x) 求取台阶信号平坦段数据的平均值，并根">
 <meta name="theme-color" content="#FFFFFF">
-<meta name="color-scheme" content="light dark"><meta property="og:title" content="autoCaliXY" />
-<meta property="og:description" content="autoCaliXY # 求取阶梯信号平坦段内的平均值，并根据给定的函数模型进行拟合。 说明 # autoCaliXY(x,y) 使用默认设置对阶梯形式的数据进行线性拟合。 [xm,ym] = autoCaliXY(x,y) 使用默认设置对阶梯形" />
+<meta name="color-scheme" content="light dark"><meta property="og:title" content="getStairs" />
+<meta property="og:description" content="getStairs # 求取阶梯信号平坦段内的平均值。 说明 # [ym,yd] = getStairs(y) 搜寻台阶信号的平坦段返回平坦段数据的平均值和标准差。 ym = getStairs(y,&#39;x&#39;,x) 求取台阶信号平坦段数据的平均值，并根" />
 <meta property="og:type" content="article" />
-<meta property="og:url" content="https://iChunyu.github.io/helps/functions/autocalixy/" /><meta property="article:section" content="functions" />
+<meta property="og:url" content="https://iChunyu.github.io/helps/functions/getstairs/" /><meta property="article:section" content="functions" />
 
 
-<title>autoCaliXY | SpringLib</title>
+<title>getStairs | SpringLib</title>
 <link rel="manifest" href="/helps/manifest.json">
 <link rel="icon" href="/helps/favicon.png" type="image/x-icon">
 <link rel="stylesheet" href="/helps/book.min.a82d7e77ceb134d151c4d7e381eeb30623fbd5a524d58c584d8716ecec0205bd.css" integrity="sha256-qC1&#43;d86xNNFRxNfjge6zBiP71aUk1YxYTYcW7OwCBb0=" crossorigin="anonymous">
@@ -116,7 +116,7 @@ https://github.com/alex-shpak/hugo-book
   
 
   
-    <a href="/helps/functions/autocalixy/" class="active">autoCaliXY</a>
+    <a href="/helps/functions/autocalixy/" class="">autoCaliXY</a>
   
 
         </li>
@@ -168,7 +168,7 @@ https://github.com/alex-shpak/hugo-book
   
 
   
-    <a href="/helps/functions/getstairs/" class="">getStairs</a>
+    <a href="/helps/functions/getstairs/" class="active">getStairs</a>
   
 
         </li>
@@ -324,7 +324,7 @@ https://github.com/alex-shpak/hugo-book
     <img src="/helps/svg/menu.svg" class="book-icon" alt="Menu" />
   </label>
 
-  <strong>autoCaliXY</strong>
+  <strong>getStairs</strong>
 
   <label for="toc-control">
     
@@ -340,25 +340,25 @@ https://github.com/alex-shpak/hugo-book
   
 <nav id="TableOfContents">
   <ul>
-    <li><a href="#font-colordd8452-autocalixy-font"><font color="#DD8452"> autoCaliXY </font></a>
+    <li><a href="#font-colordd8452-getstairs-font"><font color="#DD8452"> getStairs </font></a>
       <ul>
         <li><a href="#说明">说明</a></li>
         <li><a href="#输入">输入</a>
           <ul>
-            <li><a href="#x-y">x, y</a></li>
+            <li><a href="#y">y</a></li>
           </ul>
         </li>
         <li><a href="#输出">输出</a>
           <ul>
-            <li><a href="#xm-ym">xm, ym</a></li>
-            <li><a href="#xd-yd">xd, yd</a></li>
+            <li><a href="#ym">ym</a></li>
+            <li><a href="#yd">yd</a></li>
           </ul>
         </li>
         <li><a href="#参数">参数</a>
           <ul>
+            <li><a href="#x">x</a></li>
             <li><a href="#sample">sample</a></li>
             <li><a href="#xname-yname">xname, yname</a></li>
-            <li><a href="#stairfrom">StairFrom</a></li>
             <li><a href="#indexrange">IndexRange</a></li>
             <li><a href="#flatrange">FlatRange</a></li>
             <li><a href="#flatvariation">FlatVariation</a></li>
@@ -385,62 +385,62 @@ https://github.com/alex-shpak/hugo-book
 
       
       
-  <article class="markdown"><h1 id="font-colordd8452-autocalixy-font">
-  <font color="#DD8452"> autoCaliXY </font>
-  <a class="anchor" href="#font-colordd8452-autocalixy-font">#</a>
+  <article class="markdown"><h1 id="font-colordd8452-getstairs-font">
+  <font color="#DD8452"> getStairs </font>
+  <a class="anchor" href="#font-colordd8452-getstairs-font">#</a>
 </h1>
-<p>求取阶梯信号平坦段内的平均值，并根据给定的函数模型进行拟合。</p>
+<p>求取阶梯信号平坦段内的平均值。</p>
 <h2 id="说明">
   说明
   <a class="anchor" href="#%e8%af%b4%e6%98%8e">#</a>
 </h2>
 <hr>
 <ul>
-<li><code>autoCaliXY(x,y)</code> 使用默认设置对阶梯形式的数据进行线性拟合。</li>
-<li><code>[xm,ym] = autoCaliXY(x,y)</code> 使用默认设置对阶梯形式的数据进行线性拟合，并返回阶梯平坦段内的平均值。</li>
-<li><code>[xm,ym,xd,yd] = autoCaliXY(x,y,Name,Value)</code> 根据键值对参数对阶梯信号进行拟合，返回平坦段内数据的平均值和标准差。</li>
+<li><code>[ym,yd] = getStairs(y)</code> 搜寻台阶信号的平坦段返回平坦段数据的平均值和标准差。</li>
+<li><code>ym = getStairs(y,'x',x)</code> 求取台阶信号平坦段数据的平均值，并根据给定的自变量进行线性拟合。</li>
 </ul>
 <h2 id="输入">
   输入
   <a class="anchor" href="#%e8%be%93%e5%85%a5">#</a>
 </h2>
 <hr>
-<h3 id="x-y">
-  x, y
-  <a class="anchor" href="#x-y">#</a>
+<h3 id="y">
+  y
+  <a class="anchor" href="#y">#</a>
 </h3>
-<p>输入数据，两者的函数关系名义上为：
+<p>阶梯信号。</p>
+<h2 id="输出">
+  输出
+  <a class="anchor" href="#%e8%be%93%e5%87%ba">#</a>
+</h2>
+<hr>
+<h3 id="ym">
+  ym
+  <a class="anchor" href="#ym">#</a>
+</h3>
+<p>阶梯信号平坦段内数据的平均值。</p>
+<h3 id="yd">
+  yd
+  <a class="anchor" href="#yd">#</a>
+</h3>
+<p>阶梯信号平坦段内数据的标准差。</p>
+<h2 id="参数">
+  参数
+  <a class="anchor" href="#%e5%8f%82%e6%95%b0">#</a>
+</h2>
+<hr>
+<h3 id="x">
+  x
+  <a class="anchor" href="#x">#</a>
+</h3>
+<p>与给定台阶信号相关的调制指令，与输出信号的标称关系为 
 <link rel="stylesheet" href="/helps/katex/katex.min.css" />
 <script defer src="/helps/katex/katex.min.js"></script>
 <script defer src="/helps/katex/auto-render.min.js" onload="renderMathInElement(document.body);"></script><span>
   \(y = f(x)\)
 </span>
 。</p>
-<blockquote class="book-hint info">
-  使用该函数之前请确保两个输入数据具有相同的采样率和长度，并且台阶对齐（可使用内置 
-  <a href="https://ww2.mathworks.cn/help/signal/ref/alignsignals.html"><code>alignsignals</code></a> 函数）。
-</blockquote>
-
-<h2 id="输出">
-  输出
-  <a class="anchor" href="#%e8%be%93%e5%87%ba">#</a>
-</h2>
-<hr>
-<h3 id="xm-ym">
-  xm, ym
-  <a class="anchor" href="#xm-ym">#</a>
-</h3>
-<p>自变量和函数值在台阶平坦段内的平均值。</p>
-<h3 id="xd-yd">
-  xd, yd
-  <a class="anchor" href="#xd-yd">#</a>
-</h3>
-<p>自变量和函数值在台阶平坦段内的标准差。</p>
-<h2 id="参数">
-  参数
-  <a class="anchor" href="#%e5%8f%82%e6%95%b0">#</a>
-</h2>
-<hr>
+<p>该参数的长度应当与 <code>'Drop'</code> 之后的台阶数量一致，否则将忽略该输入且不自动进行拟合。</p>
 <h3 id="sample">
   sample
   <a class="anchor" href="#sample">#</a>
@@ -451,11 +451,6 @@ https://github.com/alex-shpak/hugo-book
   <a class="anchor" href="#xname-yname">#</a>
 </h3>
 <p><code>x</code> 和 <code>y</code> 数据的名称，分别默认为 <code>'x'</code>、<code>'y'</code>。</p>
-<h3 id="stairfrom">
-  StairFrom
-  <a class="anchor" href="#stairfrom">#</a>
-</h3>
-<p>默认为 <code>'x'</code>，表示从输入的 <code>x</code> 数据判断阶梯的边缘，可以根据数据情况将其设置为 <code>'y'</code>。</p>
 <h3 id="indexrange">
   IndexRange
   <a class="anchor" href="#indexrange">#</a>
@@ -503,7 +498,7 @@ https://github.com/alex-shpak/hugo-book
   ErrorBar
   <a class="anchor" href="#errorbar">#</a>
 </h3>
-<p>展示拟合结果时是否根据平坦段数据的标准差绘制误差棒，默认为 <code>'none'</code>，其他可选项有：<code>'x'</code>、<code>'y'</code>、<code>'xy'</code>。</p>
+<p>展示拟合结果时是否根据平坦段数据的标准差绘制误差棒，默认为 <code>'off'</code>；如果需要显示误差棒，可将该参数设置为 <code>'on'</code>。</p>
 <h3 id="capsize">
   CapSize
   <a class="anchor" href="#capsize">#</a>
@@ -560,25 +555,25 @@ https://github.com/alex-shpak/hugo-book
   
 <nav id="TableOfContents">
   <ul>
-    <li><a href="#font-colordd8452-autocalixy-font"><font color="#DD8452"> autoCaliXY </font></a>
+    <li><a href="#font-colordd8452-getstairs-font"><font color="#DD8452"> getStairs </font></a>
       <ul>
         <li><a href="#说明">说明</a></li>
         <li><a href="#输入">输入</a>
           <ul>
-            <li><a href="#x-y">x, y</a></li>
+            <li><a href="#y">y</a></li>
           </ul>
         </li>
         <li><a href="#输出">输出</a>
           <ul>
-            <li><a href="#xm-ym">xm, ym</a></li>
-            <li><a href="#xd-yd">xd, yd</a></li>
+            <li><a href="#ym">ym</a></li>
+            <li><a href="#yd">yd</a></li>
           </ul>
         </li>
         <li><a href="#参数">参数</a>
           <ul>
+            <li><a href="#x">x</a></li>
             <li><a href="#sample">sample</a></li>
             <li><a href="#xname-yname">xname, yname</a></li>
-            <li><a href="#stairfrom">StairFrom</a></li>
             <li><a href="#indexrange">IndexRange</a></li>
             <li><a href="#flatrange">FlatRange</a></li>
             <li><a href="#flatvariation">FlatVariation</a></li>
