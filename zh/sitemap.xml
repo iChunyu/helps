@@ -2,19 +2,6 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
-    <loc>https://iChunyu.github.io/helps/</loc>
-    <priority>0</priority>
-    <xhtml:link
-                rel="alternate"
-                hreflang="en"
-                href="https://iChunyu.github.io/helps/en/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="zh"
-                href="https://iChunyu.github.io/helps/"
-                />
-  </url><url>
     <loc>https://iChunyu.github.io/helps/functions/autocalixy/</loc>
   </url><url>
     <loc>https://iChunyu.github.io/helps/categories/</loc>
@@ -36,6 +23,18 @@
     <loc>https://iChunyu.github.io/helps/functions/getcurrentpsd/</loc>
   </url><url>
     <loc>https://iChunyu.github.io/helps/functions/getstairs/</loc>
+  </url><url>
+    <loc>https://iChunyu.github.io/helps/</loc>
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="https://iChunyu.github.io/helps/en/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="zh"
+                href="https://iChunyu.github.io/helps/"
+                />
   </url><url>
     <loc>https://iChunyu.github.io/helps/functions/ilpsd/</loc>
   </url><url>
