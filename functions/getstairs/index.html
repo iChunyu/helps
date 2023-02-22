@@ -16,7 +16,7 @@
 <link rel="icon" href="/helps/favicon.png" type="image/x-icon">
 <link rel="stylesheet" href="/helps/book.min.a82d7e77ceb134d151c4d7e381eeb30623fbd5a524d58c584d8716ecec0205bd.css" integrity="sha256-qC1&#43;d86xNNFRxNfjge6zBiP71aUk1YxYTYcW7OwCBb0=" crossorigin="anonymous">
   <script defer src="/helps/flexsearch.min.js"></script>
-  <script defer src="/helps/zh.search.min.ba8a9b91dc195735680b4043af39dcb1df061f0510a9f78021e2875f33fb466a.js" integrity="sha256-uoqbkdwZVzVoC0BDrzncsd8GHwUQqfeAIeKHXzP7Rmo=" crossorigin="anonymous"></script>
+  <script defer src="/helps/zh.search.min.0ea7c3d00afb237ab6932055da93a58f1371995adc62f3eedc70aecb8f9b3ebc.js" integrity="sha256-DqfD0Ar7I3q2kyBV2pOljxNxmVrcYvPu3HCuy4&#43;bPrw=" crossorigin="anonymous"></script>
 
   <script defer src="/helps/sw.min.2b586b3ef4dad4a9069cc1f5081265e74a56d1d2d6ddbd7cccef2a4742060946.js" integrity="sha256-K1hrPvTa1KkGnMH1CBJl50pW0dLW3b18zO8qR0IGCUY=" crossorigin="anonymous"></script>
 <!--
@@ -371,6 +371,7 @@ https://github.com/alex-shpak/hugo-book
             <li><a href="#markersize">MarkerSize</a></li>
           </ul>
         </li>
+        <li><a href="#使用实例">使用实例</a></li>
       </ul>
     </li>
   </ul>
@@ -514,7 +515,27 @@ https://github.com/alex-shpak/hugo-book
   <a class="anchor" href="#markersize">#</a>
 </h3>
 <p>数据标记的大小，默认为 <code>10</code>。</p>
-</article>
+<h2 id="使用实例">
+  使用实例
+  <a class="anchor" href="#%e4%bd%bf%e7%94%a8%e5%ae%9e%e4%be%8b">#</a>
+</h2>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-matlab" data-lang="matlab"><span style="display:flex;"><span><span style="color:#75715e">% 构造阶梯数据</span>
+</span></span><span style="display:flex;"><span>nStairs = <span style="color:#ae81ff">5</span>;
+</span></span><span style="display:flex;"><span>nPoints = <span style="color:#ae81ff">100</span>;
+</span></span><span style="display:flex;"><span>x0 = nan(nStairs<span style="color:#f92672">*</span>nPoints,<span style="color:#ae81ff">1</span>);
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">for</span> k = <span style="color:#ae81ff">1</span>:nStairs
+</span></span><span style="display:flex;"><span>    x0((k<span style="color:#f92672">-</span><span style="color:#ae81ff">1</span>)<span style="color:#f92672">*</span>nPoints<span style="color:#f92672">+</span><span style="color:#ae81ff">1</span>:k<span style="color:#f92672">*</span>nPoints) = k;
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">end</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">% 加入前置和后置数据零偏</span>
+</span></span><span style="display:flex;"><span>bias = zeros(<span style="color:#ae81ff">50</span>,<span style="color:#ae81ff">1</span>)<span style="color:#f92672">+</span><span style="color:#ae81ff">3</span>;
+</span></span><span style="display:flex;"><span>x0 = [bias; x0; bias];
+</span></span><span style="display:flex;"><span>x = <span style="color:#ae81ff">1</span>:nStairs;
+</span></span><span style="display:flex;"><span>y = <span style="color:#ae81ff">3.14159</span><span style="color:#f92672">*</span>x0 <span style="color:#f92672">+</span> <span style="color:#ae81ff">2.71828</span> <span style="color:#f92672">+</span> randn(size(x0))<span style="color:#f92672">*</span><span style="color:#ae81ff">0.3</span>;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">% 自动标定</span>
+</span></span><span style="display:flex;"><span>getStairs(y,<span style="color:#e6db74">&#39;x&#39;</span>,x)
+</span></span></code></pre></div></article>
  
       
 
@@ -586,6 +607,7 @@ https://github.com/alex-shpak/hugo-book
             <li><a href="#markersize">MarkerSize</a></li>
           </ul>
         </li>
+        <li><a href="#使用实例">使用实例</a></li>
       </ul>
     </li>
   </ul>
