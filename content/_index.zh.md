@@ -1,9 +1,13 @@
+---
+title: "Home"
+---
+
 # <font color="#DD8452"> SpringLib 帮助文档 </font>
 
 嗨，欢迎访问某春雨仿真库的在线帮助文档。
 
 {{< hint warning >}}
-本库尚处开发阶段，如果你已经获得本库的部分函数或模块，欢迎提交错误报告或功能需求。
+本库尚处开发阶段，部分函数以 `pcode` 的形式发布在 [此仓库](https://github.com/iChunyu/pcodes)，可尝鲜使用或提交 Bug。
 {{< /hint >}}
 
 ## 安装
