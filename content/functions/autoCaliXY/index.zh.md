@@ -101,3 +101,24 @@ title: "autoCaliXY"
 ### MarkerSize
 
 数据标记的大小，默认为 `10`。
+
+## 使用实例
+
+```matlab
+% 构造阶梯数据
+nStairs = 5;
+nPoints = 100;
+x0 = nan(nStairs*nPoints,1);
+for k = 1:nStairs
+    x0((k-1)*nPoints+1:k*nPoints) = k;
+end
+
+% 加入前置和后置数据零偏
+bias = zeros(50,1)+3;
+x0 = [bias; x0; bias];
+x = x0 + randn(size(x0))*0.03;
+y = 3.14159*x0 + 2.71828 + randn(size(x0))*0.3;
+
+% 自动标定
+autoCaliXY(x,y)
+```
